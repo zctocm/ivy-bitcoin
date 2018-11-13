@@ -31,6 +31,7 @@ import {
 import {
   getInputMap,
   getParameterIds,
+  getParameterIds2,
   getShowLockInputErrors
 } from "../../templates/selectors"
 
@@ -91,7 +92,7 @@ const moment =
     ? (momentImport as any).default
     : momentImport
 
-function getChildWidget(input: ComplexInput) {
+function getChildWidget(input: ComplexInput, type = 'test') {
   return getWidget(getChild(input))
 }
 
@@ -580,8 +581,8 @@ function SequenceNumberWidget(props: {
 }
 
 function getWidgetType(
-  type: InputType
-): ((props: { input: Input; handleChange: (e) => undefined }) => JSX.Element) {
+  type: InputType,
+): ((props: {input: Input; handleChange: (e) => undefined }) => JSX.Element) {
   switch (type) {
     case "numberInput":
       return NumberWidget
@@ -657,6 +658,25 @@ function mapToInputProps(
   }
 }
 
+function mapToInputProps2(
+    pageShowError: boolean,
+    inputsById: { [s: string]: Input },
+    id: string
+) {
+    const input = inputsById[id]
+    if (input === undefined) {
+        throw new Error("bad input ID: " + id)
+    }
+
+    const hasInputError = !validateInput(input)
+
+    return {
+        input,
+        hasInputError,
+        pageShowError
+    }
+}
+
 function mapStateToContractInputProps(
   state,
   ownProps: { id: string; showError: boolean }
@@ -668,7 +688,20 @@ function mapStateToContractInputProps(
     )
   }
   // const showError = getShowLockInputErrors(state)
-  return mapToInputProps(ownProps.showError, inputMap, ownProps.id)
+    return mapToInputProps(ownProps.showError, inputMap, ownProps.id)
+}
+function mapStateToContractInputProps2(
+  state,
+  ownProps: { id: string; showError: boolean }
+) {
+  const inputMap = state.templates.inputMap2
+  if (inputMap === undefined) {
+    throw new Error(
+      "inputMap should not be undefined when contract inputs are being rendered"
+    )
+  }
+  // const showError = getShowLockInputErrors(state)
+  return mapToInputProps2(ownProps.showError, inputMap, ownProps.id)
 }
 
 function mapDispatchToContractInputProps(dispatch, ownProps: { id: string }) {
@@ -812,17 +845,47 @@ export function getWidget(id: string): JSX.Element {
   )
 }
 
+export function getWidget2(id: string): JSX.Element {
+    const inputContext = id.split(".").shift() as InputContext
+    const type = id.split(".").pop() as InputType
+    let widgetTypeConnected
+    if (inputContext === "contractParameters") {
+        widgetTypeConnected = connect(
+            mapStateToContractInputProps2,
+            mapDispatchToContractInputProps
+        )(focusWidget(getWidgetType(type)))
+    } else {
+        widgetTypeConnected = connect(
+            mapStateToSpendInputProps,
+            mapDispatchToSpendInputProps
+        )(focusWidget(getWidgetType(type)))
+    }
+    const widget = addID(id)(widgetTypeConnected)
+    return (
+        <div className="widget-wrapper" key={"container(" + id + ")"}>
+            {widget}
+        </div>
+    )
+}
+
 function mapStateToContractParametersProps(state) {
-  return {
+    console.log('getParameterIds(state)', getParameterIds(state))
+    return {
     parameterIds: getParameterIds(state)
   }
+}
+
+function mapStateToContractParametersPropsTwo(state) {
+    return {
+        parameterIds: getParameterIds2(state)
+    }
 }
 
 function ContractParametersUnconnected(props: { parameterIds: string[] }) {
   if (props.parameterIds.length === 0) {
     return <div />
   }
-  const parameterInputs = props.parameterIds.map(id => {
+    const parameterInputs = props.parameterIds.map(id => {
     return (
       <div key={id} className="argument">
         {getWidget(id)}
@@ -836,15 +899,37 @@ function ContractParametersUnconnected(props: { parameterIds: string[] }) {
   )
 }
 
+function ContractParametersUnconnectedTwo(props: { parameterIds: string[] }) {
+    if (props.parameterIds.length === 0) {
+        return <div />
+    }
+    const parameterInputs = props.parameterIds.map(id => {
+        return (
+            <div key={id} className="argument">
+                {getWidget2(id)}
+            </div>
+        )
+    })
+    return (
+        <section style={{ wordBreak: "break-all" }}>
+            <Form>{parameterInputs}</Form>
+        </section>
+    )
+}
+
 export const ContractParameters = connect(mapStateToContractParametersProps)(
-  ContractParametersUnconnected
+    ContractParametersUnconnected
+)
+// checkDataSig output 2
+export const ContractParametersTwo= connect(mapStateToContractParametersPropsTwo)(
+    ContractParametersUnconnectedTwo
 )
 
 function ClauseParametersUnconnected(props: { parameterIds: string[] }) {
   if (props.parameterIds.length === 0) {
     return <div />
   }
-  const parameterInputs = props.parameterIds.map(id => {
+    const parameterInputs = props.parameterIds.map(id => {
     return (
       <div key={id} className="argument">
         {getWidget(id)}

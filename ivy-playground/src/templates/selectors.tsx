@@ -55,8 +55,16 @@ export const getCompiled = createSelector(
   state => state.compiled
 )
 
+export const getCompiled2 = createSelector(
+    getTemplateState,
+    state => state.compiled2
+)
+
 export const getContractParameters = createSelector(getCompiled, compiled => {
   return compiled && compiled.params
+})
+export const getContractParameters2 = createSelector(getCompiled2, compiled2 => {
+    return compiled2 && compiled2.params
 })
 
 export const getOpcodes = createSelector(getCompiled, compiled => {
@@ -72,7 +80,15 @@ export const getParameterIds = createSelector(
     )
   }
 )
-
+export const getParameterIds2 = createSelector(
+    getContractParameters2,
+    contractParameters => {
+        return (
+            contractParameters &&
+            contractParameters.map(param => "contractParameters." + param.name)
+        )
+    }
+)
 export const areInputsValid = createSelector(
   getInputMap,
   getParameterIds,

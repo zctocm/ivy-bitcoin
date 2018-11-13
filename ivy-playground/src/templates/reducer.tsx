@@ -1,5 +1,6 @@
 // ivy imports
 import { CREATE_CONTRACT, UPDATE_INPUT } from "../contracts/actions"
+import { UPDATE_CHOSEN_TEMPLATE } from "../templates/actions"
 import { generateInputMap } from "../contracts/selectors"
 import { InputMap } from "../inputs/types"
 import { Template, TemplateState } from "./types"
@@ -9,19 +10,25 @@ import { DEMO_CONTRACTS, DEMO_ID_LIST } from "ivy-bitcoin"
 import {
   SAVE_TEMPLATE,
   SET_SOURCE,
+  SET_SOURCE_TWO,
   SHOW_LOCK_INPUT_ERRORS,
   UPDATE_COMPILED,
-  UPDATE_ERROR
+  UPDATE_ERROR,
+  UPDATE_COMPILED_TWO
 } from "./actions"
 
 const INITIAL_STATE: TemplateState = {
   sourceMap: DEMO_CONTRACTS,
   idList: DEMO_ID_LIST,
   source: DEMO_CONTRACTS[DEMO_ID_LIST[0]],
+  source2: '',
   inputMap: undefined,
+  inputMap2: undefined,
   compiled: undefined,
+  compiled2: undefined,
   showLockInputErrors: false,
-  error: undefined
+  error: undefined,
+  chosenTemplate: ''
 }
 
 export default function reducer(
@@ -61,6 +68,13 @@ export default function reducer(
         source
       }
     }
+    case SET_SOURCE_TWO: {
+        const source2 = action.source2
+        return {
+            ...state,
+            source2
+        }
+    }
     case SAVE_TEMPLATE: {
       const compiled = state.compiled
       if (
@@ -85,7 +99,7 @@ export default function reducer(
         error: action.error
       }
     }
-    case UPDATE_COMPILED: {
+      case UPDATE_COMPILED: {
       const compiled = action.compiled
       const inputMap = generateInputMap(compiled)
       return {
@@ -95,11 +109,28 @@ export default function reducer(
         error: undefined
       }
     }
+    case UPDATE_COMPILED_TWO: {
+        const compiled2 = action.compiled
+        const inputMap2 = generateInputMap(compiled2)
+        return {
+            ...state,
+            compiled2,
+            inputMap2,
+            error: undefined
+        }
+    }
     case SHOW_LOCK_INPUT_ERRORS: {
       return {
         ...state,
         showLockInputErrors: action.result
       }
+    }
+    case UPDATE_CHOSEN_TEMPLATE: {
+        const chosenTemplate = action.tem
+        return {
+            ...state,
+            chosenTemplate
+        }
     }
     default:
       return state

@@ -20,7 +20,7 @@ const mapStateToBytecodeProps = state => {
 const OpcodesUnconnected = ({ opcodes }) => {
   return (
     <div className="panel-body inner">
-      <h1>Bitcoin Script</h1>
+      <h1>Bitcoin Cash Script</h1>
       <pre className="wrap">{opcodes.join(" ")}</pre>
     </div>
   )

@@ -13,7 +13,7 @@ const mapStateToProps = undefined
 const mapDispatchToProps = dispatch => {
   return {
     handleChange: value => {
-      dispatch(setSource(value))
+      // dispatch(setSource(value))
     }
   }
 }
@@ -31,6 +31,7 @@ const Ace = ({ source, handleChange }) => {
         width="100%"
         tabSize={2}
         value={source}
+        readOnly={true}
         editorProps={{ $blockScrolling: Infinity }}
         setOptions={{
           useSoftTabs: true,

@@ -35,9 +35,13 @@ export interface ClauseInfo {
 export interface TemplateState {
   sourceMap: SourceMap
   idList: string[]
-  source: string
+  source: string,
+  source2: string,
+  chosenTemplate: string,
   inputMap?: InputMap
+  inputMap2?: InputMap
   compiled?: Template
+  compiled2?: Template
   showLockInputErrors: boolean
   error?
 }

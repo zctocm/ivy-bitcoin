@@ -19,7 +19,10 @@ export const loadTemplate = (selected: string) => {
     }
     const state = getState()
     const source = getSourceMap(state)[selected]
+    // todo fake source
+    const source2 = getSourceMap(state).TransferWithTimeout
     dispatch(setSource(source))
+    dispatch(setSourceTwo(source2))
   }
 }
 
@@ -38,9 +41,7 @@ export const setSource = (source: string) => {
   return (dispatch, getState) => {
     const type = SET_SOURCE
     dispatch({ type, source })
-
     const compiled = compile(source)
-
     if (compiled.type === "compilerError") {
       dispatch(updateError(compiled.message))
     } else {
@@ -49,6 +50,20 @@ export const setSource = (source: string) => {
   }
 }
 
+export const SET_SOURCE_TWO = "templates/SET_SOURCE_TWO"
+
+export const setSourceTwo = (source2: string) => {
+    return (dispatch, getState) => {
+        const type = SET_SOURCE_TWO
+        const compiled = compile(source2)
+        dispatch({ type, source2 })
+        if (compiled.type === "compilerError") {
+            dispatch(updateError(compiled.message))
+        } else {
+            dispatch(updateCompiledTwo(compiled))
+        }
+    }
+}
 export const SAVE_TEMPLATE = "templates/SAVE_TEMPLATE"
 
 export const saveTemplate = () => ({ type: SAVE_TEMPLATE })
@@ -60,4 +75,22 @@ export const updateCompiled = (compiled: Template) => {
     type: UPDATE_COMPILED,
     compiled
   }
+}
+export const UPDATE_COMPILED_TWO = "templates/UPDATE_COMPILED_TWO"
+
+export const updateCompiledTwo = (compiled: Template) => {
+    return {
+        type: UPDATE_COMPILED_TWO,
+        compiled
+    }
+}
+export const UPDATE_CHOSEN_TEMPLATE = "contracts/UPDATE_CHOSEN_TEMPLATE"
+
+export const updateChosenTemplate = (tem: string) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: UPDATE_CHOSEN_TEMPLATE,
+            tem
+        })
+    }
 }
