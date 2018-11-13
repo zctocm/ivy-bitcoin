@@ -19,7 +19,8 @@ export const DEMO_ID_LIST = [
   "TransferWithTimeout",
   "EscrowWithDelay",
   "VaultSpend",
-  "HTLC"
+  "HTLC",
+  "LockWithData"
 ]
 
 export const DEMO_CONTRACTS = {
@@ -148,6 +149,24 @@ export const DEMO_CONTRACTS = {
   RevealFixedPoint: `contract RevealFixedPoint(val: Value) {
   clause reveal(hash: Bytes) {
     verify bytes(sha256(hash)) == hash
+    unlock val
+  }
+}`,
+LockWithData: `contract LockWithData(
+  pubKeyHash: Ripemd160(Sha256(PublicKey)),
+  recoveryKeyHash: Ripemd160(Sha256(PublicKey)),
+  recoveryTime: Time,
+  val: Value
+) {
+  clause spend(pubKey: PublicKey, sig: Signature) {
+    verify ripemd160(sha256(pubKey)) == pubKeyHash
+    verify checkSig(pubKey,sig)
+    unlock val
+  }
+  clause recovery(recoveryKey: PublicKey, sig: Signature) {
+    verify ripemd160(sha256(recoveryKey)) == recoveryKeyHash
+    verify checkSig(recoveryKey,sig)
+    verify after(recoveryTime)
     unlock val
   }
 }`
