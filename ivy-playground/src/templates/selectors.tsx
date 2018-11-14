@@ -11,8 +11,11 @@ import { getChild, Input, InputMap } from "../inputs/types"
 // internal imports
 import { SourceMap, TemplateState } from "./types"
 
-export const getTemplateState = (state: AppState): TemplateState =>
-  state.templates
+export const getTemplateState = (state: AppState): TemplateState => {
+    console.log('state', state)
+    return state.templates
+
+}
 
 export const getError = createSelector(getTemplateState, state => state.error)
 

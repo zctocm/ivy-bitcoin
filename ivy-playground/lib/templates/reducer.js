@@ -1,5 +1,5 @@
 // ivy imports
-import { CREATE_CONTRACT, UPDATE_INPUT } from "../contracts/actions";
+import { CREATE_CONTRACT, UPDATE_INPUT, UPDATE_INPUT_TWO } from "../contracts/actions";
 import { UPDATE_CHOSEN_TEMPLATE } from "../templates/actions";
 import { generateInputMap } from "../contracts/selectors";
 // internal imports
@@ -27,6 +27,14 @@ export default function reducer(state = INITIAL_STATE, action) {
                 return state;
             }
             return Object.assign({}, state, { inputMap: Object.assign({}, state.inputMap, { [name]: Object.assign({}, state.inputMap[name], { value: newValue }) }) });
+        }
+        case UPDATE_INPUT_TWO: {
+            const name = action.name;
+            const newValue = action.newValue;
+            if (state.inputMap === undefined) {
+                return state;
+            }
+            return Object.assign({}, state, { inputMap2: Object.assign({}, state.inputMap2, { [name]: Object.assign({}, state.inputMap2[name], { value: newValue }) }) });
         }
         case CREATE_CONTRACT: {
             return Object.assign({}, state, { inputMap: state.compiled

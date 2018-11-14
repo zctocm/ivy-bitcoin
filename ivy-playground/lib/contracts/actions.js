@@ -71,6 +71,16 @@ export const updateInput = (name, newValue) => {
         });
     };
 };
+export const UPDATE_INPUT_TWO = "contracts/UPDATE_INPUT_TWO";
+export const updateInput2 = (name, newValue) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: UPDATE_INPUT_TWO,
+            name,
+            newValue
+        });
+    };
+};
 export const UPDATE_CLAUSE_INPUT = "contracts/UPDATE_CLAUSE_INPUT";
 export const updateClauseInput = (name, newValue) => {
     return (dispatch, getState) => {

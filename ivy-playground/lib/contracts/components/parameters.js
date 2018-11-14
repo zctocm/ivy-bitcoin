@@ -19,7 +19,7 @@ import RadioSelect from "../../app/components/radioselect";
 import { getChild } from "../../inputs/types";
 import { computeDataForInput, getParameterIdentifier, validateInput } from "../../inputs/data";
 // internal imports
-import { updateClauseInput, updateInput } from "../actions";
+import { updateClauseInput, updateInput, updateInput2 } from "../actions";
 import { getClauseParameterIds, getSignatureData, getSpendInputMap } from "../selectors";
 // weird workaround
 const moment = typeof momentImport.default === "function"
@@ -36,6 +36,7 @@ function ParameterWidget(props) {
     // handle the fact that clause arguments look like spend.sig rather than sig
     const parameterName = getParameterIdentifier(props.input);
     const valueType = typeToString(props.input.valueType);
+    console.log(props.input);
     return (React.createElement("div", { key: props.input.name },
         React.createElement("label", null,
             parameterName,
@@ -488,6 +489,14 @@ function mapDispatchToContractInputProps(dispatch, ownProps) {
         }
     };
 }
+function mapDispatchToContractInputProps2(dispatch, ownProps) {
+    return {
+        handleChange: e => {
+            console.log('updateInput2');
+            dispatch(updateInput2(ownProps.id, e.target.value.toString()));
+        }
+    };
+}
 function mapStateToSpendInputProps(state, ownProps) {
     const inputsById = getSpendInputMap(state);
     const showError = getShowUnlockInputErrors(state);
@@ -504,7 +513,6 @@ function mapToComputedProps(state, ownProps) {
     const id = ownProps.computeFor;
     const { isTwo } = ownProps;
     const inputContext = id.split(".").shift();
-    console.log(isTwo);
     let inputsById;
     if (inputContext === "contractParameters") {
         inputsById = isTwo ? state.templates.inputMap2 : getInputMap(state);
@@ -529,7 +537,6 @@ function mapToComputedProps(state, ownProps) {
             };
         }
         catch (e) {
-            console.log(e);
             return {};
         }
     }
@@ -541,7 +548,6 @@ function mapToComputedProps(state, ownProps) {
             };
         }
         catch (e) {
-            console.log(e);
             return {};
         }
     }
@@ -597,16 +603,16 @@ export function getWidget2(id) {
     const type = id.split(".").pop();
     let widgetTypeConnected;
     if (inputContext === "contractParameters") {
-        widgetTypeConnected = connect(mapStateToContractInputProps2, mapDispatchToContractInputProps)(focusWidget(getWidgetType(type, true)));
+        widgetTypeConnected = connect(mapStateToContractInputProps2, mapDispatchToContractInputProps2)(focusWidget(getWidgetType(type, true)));
     }
     else {
+        // todo replace new data
         widgetTypeConnected = connect(mapStateToSpendInputProps, mapDispatchToSpendInputProps)(focusWidget(getWidgetType(type, true)));
     }
     const widget = addID(id)(widgetTypeConnected);
     return (React.createElement("div", { className: "widget-wrapper", key: "container(" + id + ")" }, widget));
 }
 function mapStateToContractParametersProps(state) {
-    console.log('getParameterIds(state)', getParameterIds(state));
     return {
         parameterIds: getParameterIds(state)
     };

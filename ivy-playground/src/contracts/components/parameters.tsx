@@ -78,7 +78,7 @@ import {
 } from "../../inputs/data"
 
 // internal imports
-import { updateClauseInput, updateInput } from "../actions"
+import { updateClauseInput, updateInput, updateInput2 } from "../actions"
 import {
   getClauseParameterIds,
   getError,
@@ -109,6 +109,7 @@ function ParameterWidget(props: {
   // handle the fact that clause arguments look like spend.sig rather than sig
   const parameterName = getParameterIdentifier(props.input)
   const valueType = typeToString(props.input.valueType)
+  console.log(props.input)
   return (
     <div key={props.input.name}>
       <label>
@@ -986,9 +987,18 @@ function mapStateToContractInputProps2(
 function mapDispatchToContractInputProps(dispatch, ownProps: { id: string }) {
   return {
     handleChange: e => {
-      dispatch(updateInput(ownProps.id, e.target.value.toString()))
+        dispatch(updateInput(ownProps.id, e.target.value.toString()))
     }
   }
+}
+
+function mapDispatchToContractInputProps2(dispatch, ownProps: { id: string }) {
+    return {
+        handleChange: e => {
+            console.log('updateInput2')
+            dispatch(updateInput2(ownProps.id, e.target.value.toString()))
+        }
+    }
 }
 
 function mapStateToSpendInputProps(state, ownProps: { id: string }) {
@@ -1009,7 +1019,6 @@ function mapToComputedProps(state, ownProps: any) {
   const id = ownProps.computeFor
   const { isTwo } = ownProps
   const inputContext = id.split(".").shift() as InputContext
-  console.log(isTwo)
   let inputsById
     if (inputContext === "contractParameters") {
         inputsById = isTwo ?  state.templates.inputMap2 : getInputMap(state)
@@ -1036,7 +1045,6 @@ function mapToComputedProps(state, ownProps: any) {
         value: computedValue
       }
     } catch (e) {
-      console.log(e)
       return {}
     }
   } else if (input.type === "generateSignatureInput") {
@@ -1046,7 +1054,6 @@ function mapToComputedProps(state, ownProps: any) {
         value: computedValue
       }
     } catch (e) {
-      console.log(e)
       return {}
     }
   }
@@ -1135,9 +1142,10 @@ export function getWidget2(id: string): JSX.Element {
     if (inputContext === "contractParameters") {
         widgetTypeConnected = connect(
             mapStateToContractInputProps2,
-            mapDispatchToContractInputProps
+            mapDispatchToContractInputProps2
         )(focusWidget(getWidgetType(type, true)))
     } else {
+        // todo replace new data
         widgetTypeConnected = connect(
             mapStateToSpendInputProps,
             mapDispatchToSpendInputProps
@@ -1152,7 +1160,6 @@ export function getWidget2(id: string): JSX.Element {
 }
 
 function mapStateToContractParametersProps(state) {
-    console.log('getParameterIds(state)', getParameterIds(state))
     return {
     parameterIds: getParameterIds(state)
   }

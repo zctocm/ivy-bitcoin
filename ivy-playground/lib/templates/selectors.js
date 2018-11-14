@@ -2,7 +2,10 @@
 import { instantiate } from "ivy-bitcoin";
 import { createSelector } from "reselect";
 import { getData, isValidInput } from "../inputs/data";
-export const getTemplateState = (state) => state.templates;
+export const getTemplateState = (state) => {
+    console.log('state', state);
+    return state.templates;
+};
 export const getError = createSelector(getTemplateState, state => state.error);
 export const getSourceMap = createSelector(getTemplateState, state => state.sourceMap);
 export const getSource = createSelector(getTemplateState, state => state.source);

@@ -106,7 +106,17 @@ export const updateInput = (name: string, newValue: string) => {
     })
   }
 }
+export const UPDATE_INPUT_TWO = "contracts/UPDATE_INPUT_TWO"
 
+export const updateInput2 = (name: string, newValue: string) => {
+    return (dispatch, getState) => {
+        dispatch({
+            type: UPDATE_INPUT_TWO,
+            name,
+            newValue
+        })
+    }
+}
 export const UPDATE_CLAUSE_INPUT = "contracts/UPDATE_CLAUSE_INPUT"
 
 export const updateClauseInput = (name: string, newValue: string) => {

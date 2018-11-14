@@ -1,5 +1,5 @@
 // ivy imports
-import { CREATE_CONTRACT, UPDATE_INPUT } from "../contracts/actions"
+import { CREATE_CONTRACT, UPDATE_INPUT, UPDATE_INPUT_TWO } from "../contracts/actions"
 import { UPDATE_CHOSEN_TEMPLATE } from "../templates/actions"
 import { generateInputMap } from "../contracts/selectors"
 import { InputMap } from "../inputs/types"
@@ -52,6 +52,23 @@ export default function reducer(
           }
         }
       }
+    }
+    case UPDATE_INPUT_TWO: {
+        const name = action.name
+        const newValue = action.newValue
+        if (state.inputMap === undefined) {
+            return state
+        }
+        return {
+            ...state,
+            inputMap2: {
+                ...state.inputMap2,
+                [name]: {
+                    ...state.inputMap2[name],
+                    value: newValue
+                }
+            }
+        }
     }
     case CREATE_CONTRACT: {
       return {
