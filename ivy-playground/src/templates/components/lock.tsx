@@ -56,7 +56,7 @@ const Lock = ({ source, contractParameters, error, bytecode, chosenTem }) => {
                   {contractParameters.length > 0 ? (
                       <Section name="Contract Arguments">
                           <div className="form-wrapper">
-                              {/*<ContractParameters />*/}
+                              <ContractParameters />
                           </div>
                           <div className="form-wrapper">
                               {error ? <ErrorAlert error={error} /> : <div />}

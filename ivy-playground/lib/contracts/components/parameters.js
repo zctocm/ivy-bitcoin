@@ -25,8 +25,8 @@ import { getClauseParameterIds, getSignatureData, getSpendInputMap } from "../se
 const moment = typeof momentImport.default === "function"
     ? momentImport.default
     : momentImport;
-function getChildWidget(input, type = 'test') {
-    return getWidget(getChild(input));
+function getChildWidget(input, isTwo = false) {
+    return (isTwo ? getWidget2(getChild(input)) : getWidget(getChild(input)));
 }
 function ParameterWidget(props) {
     // handle the fact that unknown input types end up here
@@ -43,12 +43,34 @@ function ParameterWidget(props) {
             React.createElement("span", { className: "type-label" }, valueType)),
         getChildWidget(props.input)));
 }
+function ParameterWidget2(props) {
+    // handle the fact that unknown input types end up here
+    if (props.input.valueType === undefined) {
+        throw new Error("invalid input for ParameterWidget: " + props.input.name);
+    }
+    // handle the fact that clause arguments look like spend.sig rather than sig
+    const parameterName = getParameterIdentifier(props.input);
+    const valueType = typeToString(props.input.valueType);
+    return (React.createElement("div", { key: props.input.name },
+        React.createElement("label", null,
+            parameterName,
+            ": ",
+            React.createElement("span", { className: "type-label" }, valueType)),
+        getChildWidget(props.input, true)));
+}
 function GenerateBytesWidget(props) {
     return (React.createElement("div", null,
         React.createElement(InputGroup, null,
             React.createElement(InputGroup.Addon, null, "Length"),
             React.createElement(FormControl, { type: "text", style: { width: 200 }, key: props.input.name, value: props.input.value, onChange: props.handleChange })),
         React.createElement(ComputedValue, { computeFor: props.id })));
+}
+function GenerateBytesWidget2(props) {
+    return (React.createElement("div", null,
+        React.createElement(InputGroup, null,
+            React.createElement(InputGroup.Addon, null, "Length"),
+            React.createElement(FormControl, { type: "text", style: { width: 200 }, key: props.input.name, value: props.input.value, onChange: props.handleChange })),
+        React.createElement(ComputedValue, { computeFor: props.id, isTwo: true })));
 }
 function NumberWidget(props) {
     return (React.createElement(FormControl, { type: "text", style: { width: 250 }, key: props.input.name, value: props.input.value, onChange: props.handleChange }));
@@ -83,6 +105,15 @@ function BytesWidget(props) {
         React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
         getChildWidget(props.input)));
 }
+function BytesWidget2(props) {
+    const options = [
+        { label: "Generate Bytes", value: "generateBytesInput" },
+        { label: "Provide Bytes", value: "provideBytesInput" }
+    ];
+    return (React.createElement("div", null,
+        React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
+        getChildWidget(props.input, true)));
+}
 function ProvidePrivateKeyWidget(props) {
     return (React.createElement("div", null,
         React.createElement(TextWidget, { input: props.input, handleChange: props.handleChange }),
@@ -101,6 +132,16 @@ function HashWidget(props) {
         React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
         getChildWidget(props.input)));
 }
+function HashWidget2(props) {
+    const options = [
+        { label: "Generate Hash", value: "generateHashInput" },
+        { label: "Provide Hash", value: "provideHashInput" }
+    ];
+    const handleChange = (s) => undefined;
+    return (React.createElement("div", null,
+        React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
+        getChildWidget(props.input, true)));
+}
 function GenerateHashWidget(props) {
     return (React.createElement("div", null,
         React.createElement(ComputedValue, { computeFor: props.id }),
@@ -111,6 +152,16 @@ function GenerateHashWidget(props) {
             React.createElement("label", { className: "type-label" }, typeToString(props.input.hashType.inputType)),
             getChildWidget(props.input))));
 }
+function GenerateHashWidget2(props) {
+    return (React.createElement("div", null,
+        React.createElement(ComputedValue, { computeFor: props.id, isTwo: true }),
+        React.createElement("div", { className: "nested" },
+            React.createElement("div", { className: "description" },
+                props.input.hashType.hashFunction,
+                " of:"),
+            React.createElement("label", { className: "type-label" }, typeToString(props.input.hashType.inputType)),
+            getChildWidget(props.input, true))));
+}
 function PublicKeyWidget(props) {
     const options = [
         { label: "Generate Public Key", value: "generatePublicKeyInput" },
@@ -120,6 +171,16 @@ function PublicKeyWidget(props) {
     return (React.createElement("div", null,
         React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
         getChildWidget(props.input)));
+}
+function PublicKeyWidget2(props) {
+    const options = [
+        { label: "Generate Public Key", value: "generatePublicKeyInput" },
+        { label: "Provide Public Key", value: "providePublicKeyInput" }
+    ];
+    const handleChange = (s) => undefined;
+    return (React.createElement("div", null,
+        React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
+        getChildWidget(props.input, true)));
 }
 function GeneratePublicKeyWidget(props) {
     const options = [
@@ -134,6 +195,19 @@ function GeneratePublicKeyWidget(props) {
             React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
             getChildWidget(props.input))));
 }
+function GeneratePublicKeyWidget2(props) {
+    const options = [
+        { label: "Generate Private Key", value: "generatePrivateKeyInput" },
+        { label: "Provide Private Key", value: "providePrivateKeyInput" }
+    ];
+    return (React.createElement("div", null,
+        React.createElement(ComputedValue, { computeFor: props.id, isTwo: true }),
+        React.createElement("div", { className: "nested" },
+            React.createElement("div", { className: "description" }, "derived from:"),
+            React.createElement("label", { className: "type-label" }, "PrivateKey"),
+            React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
+            getChildWidget(props.input, true))));
+}
 function GenerateSignatureWidget(props) {
     return (React.createElement("div", null,
         React.createElement(ComputedValue, { computeFor: props.id }),
@@ -141,6 +215,14 @@ function GenerateSignatureWidget(props) {
             React.createElement("div", { className: "description" }, "signed using:"),
             React.createElement("label", { className: "type-label" }, "PrivateKey"),
             getChildWidget(props.input))));
+}
+function GenerateSignatureWidget2(props) {
+    return (React.createElement("div", null,
+        React.createElement(ComputedValue, { computeFor: props.id, isTwo: true }),
+        React.createElement("div", { className: "nested" },
+            React.createElement("div", { className: "description" }, "signed using:"),
+            React.createElement("label", { className: "type-label" }, "PrivateKey"),
+            getChildWidget(props.input, true))));
 }
 function SignatureWidget(props) {
     const options = [
@@ -150,6 +232,15 @@ function SignatureWidget(props) {
     return (React.createElement("div", null,
         React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
         getChildWidget(props.input)));
+}
+function SignatureWidget2(props) {
+    const options = [
+        { label: "Generate Signature", value: "generateSignatureInput" },
+        { label: "Provide Signature", value: "provideSignatureInput" }
+    ];
+    return (React.createElement("div", null,
+        React.createElement(RadioSelect, { options: options, selected: props.input.value, name: props.input.name, handleChange: props.handleChange }),
+        getChildWidget(props.input, true)));
 }
 function GeneratePrivateKeyWidget(props) {
     return (React.createElement("div", null,
@@ -170,6 +261,21 @@ function OptionsWidget(props) {
             getChildWidget(props.input),
             React.createElement(DropdownButton, { componentClass: InputGroup.Button, id: "input-dropdown-addon", title: chosen.label }, menuItems))));
 }
+function OptionsWidget2(props) {
+    const chosenOptions = props.options.filter(opt => opt.value === props.input.value);
+    if (chosenOptions.length !== 1) {
+        throw new Error("there should be only one chosen option");
+    }
+    const chosen = chosenOptions[0];
+    const others = props.options.filter(opt => opt.value !== props.input.value);
+    const menuItems = others.map(opt => {
+        return (React.createElement(MenuItem, { key: opt.value, onClick: e => props.handleChange({ target: { value: opt.value } }) }, opt.label));
+    });
+    return (React.createElement("div", { style: { width: 300 } },
+        React.createElement(InputGroup, null,
+            getChildWidget(props.input, true),
+            React.createElement(DropdownButton, { componentClass: InputGroup.Button, id: "input-dropdown-addon", title: chosen.label }, menuItems))));
+}
 function DurationWidget(props) {
     const options = [
         { label: "x 512 seconds", value: "secondsDurationInput" },
@@ -178,6 +284,16 @@ function DurationWidget(props) {
     const helperText = props.input.value === "secondsDurationInput" ? (React.createElement(ComputedSecondsWidget, { name: props.input.name + ".secondsDurationInput" })) : (React.createElement(ComputedDurationWidget, { name: props.input.name + ".blocksDurationInput" }));
     return (React.createElement(FormGroup, null,
         React.createElement(OptionsWidget, Object.assign({}, props, { options: options })),
+        helperText));
+}
+function DurationWidget2(props) {
+    const options = [
+        { label: "x 512 seconds", value: "secondsDurationInput" },
+        { label: "Blocks", value: "blocksDurationInput" }
+    ];
+    const helperText = props.input.value === "secondsDurationInput" ? (React.createElement(ComputedSecondsWidget, { name: props.input.name + ".secondsDurationInput" })) : (React.createElement(ComputedDurationWidget, { name: props.input.name + ".blocksDurationInput" }));
+    return (React.createElement(FormGroup, null,
+        React.createElement(OptionsWidget2, Object.assign({}, props, { options: options })),
         helperText));
 }
 function ComputedSecondsWidgetUnconnected(props) {
@@ -206,9 +322,13 @@ function ComputedBlockHeightWidgetUnconnected(props) {
 }
 const mapStateToComputedInputProps = (state, { name }) => {
     const inputContext = name.split(".").shift();
-    const inputMap = inputContext === "contractParameters"
-        ? getInputMap(state)
-        : getSpendInputMap(state);
+    let inputMap;
+    if (inputContext === "contractParameters") {
+        inputMap = getInputMap(state);
+    }
+    else {
+        inputMap = getSpendInputMap(state);
+    }
     if (inputMap === undefined) {
         throw new Error("input map should not be undefined now");
     }
@@ -231,6 +351,19 @@ function TimeWidget(props) {
     ];
     return React.createElement(OptionsWidget, Object.assign({}, props, { options: options }));
 }
+function TimeWidget2(props) {
+    const options = [
+        {
+            label: "Timestamp (UTC)",
+            value: "timestampTimeInput"
+        },
+        {
+            label: "Block Height",
+            value: "blockheightTimeInput"
+        }
+    ];
+    return React.createElement(OptionsWidget2, Object.assign({}, props, { options: options }));
+}
 function BalanceWidgetUnconnected({ namePrefix, balance }) {
     let jsx = React.createElement("small", null);
     if (balance !== undefined) {
@@ -243,29 +376,35 @@ function BalanceWidgetUnconnected({ namePrefix, balance }) {
 function LockTimeWidget(props) {
     return getChildWidget(props.input);
 }
+function LockTimeWidget2(props) {
+    return getChildWidget(props.input, true);
+}
 function SequenceNumberWidget(props) {
     return getChildWidget(props.input);
 }
-function getWidgetType(type) {
+function SequenceNumberWidget2(props) {
+    return getChildWidget(props.input, true);
+}
+function getWidgetType(type, isTwo = false) {
     switch (type) {
         case "numberInput":
             return NumberWidget;
         case "booleanInput":
             return BooleanWidget;
         case "bytesInput":
-            return BytesWidget;
+            return (isTwo ? BytesWidget2 : BytesWidget);
         case "generateBytesInput":
-            return GenerateBytesWidget;
+            return (isTwo ? GenerateBytesWidget2 : GenerateBytesWidget);
         case "provideBytesInput":
             return TextWidget;
         case "publicKeyInput":
-            return PublicKeyWidget;
+            return (isTwo ? PublicKeyWidget2 : PublicKeyWidget);
         case "signatureInput":
-            return SignatureWidget;
+            return (isTwo ? SignatureWidget2 : SignatureWidget);
         case "generateSignatureInput":
-            return GenerateSignatureWidget;
+            return (isTwo ? GenerateSignatureWidget2 : GenerateSignatureWidget);
         case "generatePublicKeyInput":
-            return GeneratePublicKeyWidget;
+            return (isTwo ? GeneratePublicKeyWidget2 : GeneratePublicKeyWidget);
         case "generatePrivateKeyInput":
             return GeneratePrivateKeyWidget;
         case "providePublicKeyInput":
@@ -275,13 +414,13 @@ function getWidgetType(type) {
         case "provideSignatureInput":
             return TextWidget;
         case "hashInput":
-            return HashWidget;
+            return (isTwo ? HashWidget2 : HashWidget);
         case "provideHashInput":
             return TextWidget;
         case "generateHashInput":
-            return GenerateHashWidget;
+            return (isTwo ? GenerateHashWidget2 : GenerateHashWidget);
         case "timeInput":
-            return TimeWidget;
+            return (isTwo ? TimeWidget2 : TimeWidget);
         case "valueInput":
             return ValueWidget;
         case "timestampTimeInput":
@@ -289,17 +428,17 @@ function getWidgetType(type) {
         case "blockheightTimeInput":
             return NumberWidget;
         case "durationInput":
-            return DurationWidget;
+            return (isTwo ? DurationWidget2 : DurationWidget);
         case "secondsDurationInput":
             return TextWidget;
         case "blocksDurationInput":
             return TextWidget;
         case "lockTimeInput":
-            return LockTimeWidget;
+            return (isTwo ? LockTimeWidget2 : LockTimeWidget);
         case "sequenceNumberInput":
             return SequenceNumberWidget;
         default:
-            return ParameterWidget;
+            return (isTwo ? ParameterWidget2 : ParameterWidget);
     }
 }
 function mapToInputProps(pageShowError, inputsById, id) {
@@ -363,10 +502,16 @@ function mapDispatchToSpendInputProps(dispatch, ownProps) {
 }
 function mapToComputedProps(state, ownProps) {
     const id = ownProps.computeFor;
+    const { isTwo } = ownProps;
     const inputContext = id.split(".").shift();
-    const inputsById = inputContext === "contractParameters"
-        ? getInputMap(state)
-        : getSpendInputMap(state);
+    console.log(isTwo);
+    let inputsById;
+    if (inputContext === "contractParameters") {
+        inputsById = isTwo ? state.templates.inputMap2 : getInputMap(state);
+    }
+    else {
+        inputsById = getSpendInputMap(state);
+    }
     if (inputsById === undefined) {
         throw new Error("inputMap should not be undefined when contract inputs are being rendered");
     }
@@ -452,10 +597,10 @@ export function getWidget2(id) {
     const type = id.split(".").pop();
     let widgetTypeConnected;
     if (inputContext === "contractParameters") {
-        widgetTypeConnected = connect(mapStateToContractInputProps2, mapDispatchToContractInputProps)(focusWidget(getWidgetType(type)));
+        widgetTypeConnected = connect(mapStateToContractInputProps2, mapDispatchToContractInputProps)(focusWidget(getWidgetType(type, true)));
     }
     else {
-        widgetTypeConnected = connect(mapStateToSpendInputProps, mapDispatchToSpendInputProps)(focusWidget(getWidgetType(type)));
+        widgetTypeConnected = connect(mapStateToSpendInputProps, mapDispatchToSpendInputProps)(focusWidget(getWidgetType(type, true)));
     }
     const widget = addID(id)(widgetTypeConnected);
     return (React.createElement("div", { className: "widget-wrapper", key: "container(" + id + ")" }, widget));

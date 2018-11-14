@@ -92,8 +92,10 @@ const moment =
     ? (momentImport as any).default
     : momentImport
 
-function getChildWidget(input: ComplexInput, type = 'test') {
-  return getWidget(getChild(input))
+function getChildWidget(input: ComplexInput, isTwo: boolean = false) {
+  return (
+      isTwo ? getWidget2(getChild(input)) : getWidget(getChild(input))
+  )
 }
 
 function ParameterWidget(props: {
@@ -116,7 +118,26 @@ function ParameterWidget(props: {
     </div>
   )
 }
-
+function ParameterWidget2(props: {
+    input: ParameterInput
+    handleChange: (e) => undefined
+}) {
+    // handle the fact that unknown input types end up here
+    if (props.input.valueType === undefined) {
+        throw new Error("invalid input for ParameterWidget: " + props.input.name)
+    }
+    // handle the fact that clause arguments look like spend.sig rather than sig
+    const parameterName = getParameterIdentifier(props.input)
+    const valueType = typeToString(props.input.valueType)
+    return (
+        <div key={props.input.name}>
+            <label>
+                {parameterName}: <span className="type-label">{valueType}</span>
+            </label>
+            {getChildWidget(props.input,true)}
+        </div>
+    )
+}
 function GenerateBytesWidget(props: {
   id: string
   input: GenerateBytesInput
@@ -138,7 +159,27 @@ function GenerateBytesWidget(props: {
     </div>
   )
 }
-
+function GenerateBytesWidget2(props: {
+    id: string
+    input: GenerateBytesInput
+    handleChange: (e) => undefined
+}) {
+    return (
+        <div>
+            <InputGroup>
+                <InputGroup.Addon>Length</InputGroup.Addon>
+                <FormControl
+                    type="text"
+                    style={{ width: 200 }}
+                    key={props.input.name}
+                    value={props.input.value}
+                    onChange={props.handleChange}
+                />
+            </InputGroup>
+            <ComputedValue computeFor={props.id}  isTwo = { true } />
+        </div>
+    )
+}
 function NumberWidget(props: {
   input: NumberInput
   handleChange: (e) => undefined
@@ -245,6 +286,26 @@ function BytesWidget(props: {
     </div>
   )
 }
+function BytesWidget2(props: {
+    input: BytesInput
+    handleChange: (e) => undefined
+}) {
+    const options = [
+        { label: "Generate Bytes", value: "generateBytesInput" },
+        { label: "Provide Bytes", value: "provideBytesInput" }
+    ]
+    return (
+        <div>
+            <RadioSelect
+                options={options}
+                selected={props.input.value}
+                name={props.input.name}
+                handleChange={props.handleChange}
+            />
+            {getChildWidget(props.input, true)}
+        </div>
+    )
+}
 
 function ProvidePrivateKeyWidget(props: {
   input: ProvidePrivateKeyInput
@@ -299,7 +360,27 @@ function HashWidget(props: {
     </div>
   )
 }
-
+function HashWidget2(props: {
+    input: HashInput
+    handleChange: (e) => undefined
+}) {
+    const options = [
+        { label: "Generate Hash", value: "generateHashInput" },
+        { label: "Provide Hash", value: "provideHashInput" }
+    ]
+    const handleChange = (s: string) => undefined
+    return (
+        <div>
+            <RadioSelect
+                options={options}
+                selected={props.input.value}
+                name={props.input.name}
+                handleChange={props.handleChange}
+            />
+            {getChildWidget(props.input,true)}
+        </div>
+    )
+}
 function GenerateHashWidget(props: {
   id: string
   input: GenerateHashInput
@@ -319,6 +400,27 @@ function GenerateHashWidget(props: {
       </div>
     </div>
   )
+}
+
+function GenerateHashWidget2(props: {
+    id: string
+    input: GenerateHashInput
+    handleChange: (e) => undefined
+}) {
+    return (
+        <div>
+            <ComputedValue computeFor={props.id} isTwo = { true } />
+            <div className="nested">
+                <div className="description">
+                    {props.input.hashType.hashFunction} of:
+                </div>
+                <label className="type-label">
+                    {typeToString(props.input.hashType.inputType)}
+                </label>
+                {getChildWidget(props.input, true)}
+            </div>
+        </div>
+    )
 }
 
 function PublicKeyWidget(props: {
@@ -341,6 +443,28 @@ function PublicKeyWidget(props: {
       {getChildWidget(props.input)}
     </div>
   )
+}
+
+function PublicKeyWidget2(props: {
+    input: PublicKeyInput
+    handleChange: (e) => undefined
+}) {
+    const options = [
+        { label: "Generate Public Key", value: "generatePublicKeyInput" },
+        { label: "Provide Public Key", value: "providePublicKeyInput" }
+    ]
+    const handleChange = (s: string) => undefined
+    return (
+        <div>
+            <RadioSelect
+                options={options}
+                selected={props.input.value}
+                name={props.input.name}
+                handleChange={props.handleChange}
+            />
+            {getChildWidget(props.input, true)}
+        </div>
+    )
 }
 
 function GeneratePublicKeyWidget(props: {
@@ -369,7 +493,32 @@ function GeneratePublicKeyWidget(props: {
     </div>
   )
 }
-
+function GeneratePublicKeyWidget2(props: {
+    id: string
+    input: GeneratePublicKeyInput
+    handleChange: (e) => undefined
+}) {
+    const options = [
+        { label: "Generate Private Key", value: "generatePrivateKeyInput" },
+        { label: "Provide Private Key", value: "providePrivateKeyInput" }
+    ]
+    return (
+        <div>
+            <ComputedValue computeFor={props.id} isTwo = {true} />
+            <div className="nested">
+                <div className="description">derived from:</div>
+                <label className="type-label">PrivateKey</label>
+                <RadioSelect
+                    options={options}
+                    selected={props.input.value}
+                    name={props.input.name}
+                    handleChange={props.handleChange}
+                />
+                {getChildWidget(props.input, true)}
+            </div>
+        </div>
+    )
+}
 function GenerateSignatureWidget(props: {
   id: string
   input: GenerateSignatureInput
@@ -387,7 +536,23 @@ function GenerateSignatureWidget(props: {
     </div>
   )
 }
-
+function GenerateSignatureWidget2(props: {
+    id: string
+    input: GenerateSignatureInput
+    handleChange: (e) => undefined
+    computedValue: string
+}) {
+    return (
+        <div>
+            <ComputedValue computeFor={props.id} isTwo = {true} />
+            <div className="nested">
+                <div className="description">signed using:</div>
+                <label className="type-label">PrivateKey</label>
+                {getChildWidget(props.input, true)}
+            </div>
+        </div>
+    )
+}
 function SignatureWidget(props: {
   input: SignatureInput
   handleChange: (e) => undefined
@@ -409,7 +574,27 @@ function SignatureWidget(props: {
     </div>
   )
 }
-
+function SignatureWidget2(props: {
+    input: SignatureInput
+    handleChange: (e) => undefined
+    computedValue: string
+}) {
+    const options = [
+        { label: "Generate Signature", value: "generateSignatureInput" },
+        { label: "Provide Signature", value: "provideSignatureInput" }
+    ]
+    return (
+        <div>
+            <RadioSelect
+                options={options}
+                selected={props.input.value}
+                name={props.input.name}
+                handleChange={props.handleChange}
+            />
+            {getChildWidget(props.input, true)}
+        </div>
+    )
+}
 function GeneratePrivateKeyWidget(props: {
   input: GeneratePrivateKeyInput
   handleChange: (e) => undefined
@@ -464,7 +649,44 @@ function OptionsWidget(props: {
     </div>
   )
 }
-
+function OptionsWidget2(props: {
+    input: DurationInput
+    handleChange: (e) => undefined
+    options: Option[]
+}) {
+    const chosenOptions = props.options.filter(
+        opt => opt.value === props.input.value
+    )
+    if (chosenOptions.length !== 1) {
+        throw new Error("there should be only one chosen option")
+    }
+    const chosen = chosenOptions[0]
+    const others = props.options.filter(opt => opt.value !== props.input.value)
+    const menuItems = others.map(opt => {
+        return (
+            <MenuItem
+                key={opt.value}
+                onClick={e => props.handleChange({ target: { value: opt.value } })}
+            >
+                {opt.label}
+            </MenuItem>
+        )
+    })
+    return (
+        <div style={{ width: 300 }}>
+            <InputGroup>
+                {getChildWidget(props.input, true)}
+                <DropdownButton
+                    componentClass={InputGroup.Button}
+                    id="input-dropdown-addon"
+                    title={chosen.label}
+                >
+                    {menuItems}
+                </DropdownButton>
+            </InputGroup>
+        </div>
+    )
+}
 function DurationWidget(props: {
   input: DurationInput
   handleChange: (e) => undefined
@@ -489,6 +711,31 @@ function DurationWidget(props: {
       {helperText}
     </FormGroup>
   )
+}
+function DurationWidget2(props: {
+    input: DurationInput
+    handleChange: (e) => undefined
+}) {
+    const options = [
+        { label: "x 512 seconds", value: "secondsDurationInput" },
+        { label: "Blocks", value: "blocksDurationInput" }
+    ]
+    const helperText =
+        props.input.value === "secondsDurationInput" ? (
+            <ComputedSecondsWidget
+                name={props.input.name + ".secondsDurationInput"}
+            />
+        ) : (
+            <ComputedDurationWidget
+                name={props.input.name + ".blocksDurationInput"}
+            />
+        )
+    return (
+        <FormGroup>
+            <OptionsWidget2 {...props} options={options} />
+            {helperText}
+        </FormGroup>
+    )
 }
 
 function ComputedSecondsWidgetUnconnected(props: {
@@ -521,10 +768,12 @@ function ComputedBlockHeightWidgetUnconnected(props: {
 
 const mapStateToComputedInputProps = (state, { name }) => {
   const inputContext = name.split(".").shift() as InputContext
-  const inputMap =
-    inputContext === "contractParameters"
-      ? getInputMap(state)
-      : getSpendInputMap(state)
+  let inputMap
+    if (inputContext === "contractParameters") {
+        inputMap = getInputMap(state)
+    } else {
+        inputMap = getSpendInputMap(state)
+    }
   if (inputMap === undefined) {
     throw new Error("input map should not be undefined now")
   }
@@ -558,6 +807,23 @@ function TimeWidget(props: {
   return <OptionsWidget {...props} options={options} />
 }
 
+function TimeWidget2(props: {
+    input: DurationInput
+    handleChange: (e) => undefined
+}) {
+    const options = [
+        {
+            label: "Timestamp (UTC)",
+            value: "timestampTimeInput"
+        },
+        {
+            label: "Block Height",
+            value: "blockheightTimeInput"
+        }
+    ]
+    return <OptionsWidget2 {...props} options={options} />
+}
+
 function BalanceWidgetUnconnected({ namePrefix, balance }) {
   let jsx = <small />
   if (balance !== undefined) {
@@ -573,15 +839,28 @@ function LockTimeWidget(props: {
   return getChildWidget(props.input)
 }
 
+function LockTimeWidget2(props: {
+    input: LockTimeInput
+    handleChange: (e) => undefined
+}) {
+    return getChildWidget(props.input, true)
+}
+
 function SequenceNumberWidget(props: {
   input: SequenceNumberInput
   handleChange: (e) => undefined
 }) {
   return getChildWidget(props.input)
 }
-
+function SequenceNumberWidget2(props: {
+    input: SequenceNumberInput
+    handleChange: (e) => undefined
+}) {
+    return getChildWidget(props.input, true)
+}
 function getWidgetType(
   type: InputType,
+  isTwo: boolean = false
 ): ((props: {input: Input; handleChange: (e) => undefined }) => JSX.Element) {
   switch (type) {
     case "numberInput":
@@ -589,19 +868,19 @@ function getWidgetType(
     case "booleanInput":
       return BooleanWidget
     case "bytesInput":
-      return BytesWidget
+      return (isTwo ? BytesWidget2 : BytesWidget)
     case "generateBytesInput":
-      return GenerateBytesWidget
+      return (isTwo? GenerateBytesWidget2: GenerateBytesWidget)
     case "provideBytesInput":
       return TextWidget
     case "publicKeyInput":
-      return PublicKeyWidget
+      return (isTwo? PublicKeyWidget2 : PublicKeyWidget)
     case "signatureInput":
-      return SignatureWidget
+      return (isTwo? SignatureWidget2: SignatureWidget)
     case "generateSignatureInput":
-      return GenerateSignatureWidget
+      return (isTwo? GenerateSignatureWidget2 : GenerateSignatureWidget)
     case "generatePublicKeyInput":
-      return GeneratePublicKeyWidget
+      return (isTwo ? GeneratePublicKeyWidget2 : GeneratePublicKeyWidget)
     case "generatePrivateKeyInput":
       return GeneratePrivateKeyWidget
     case "providePublicKeyInput":
@@ -611,13 +890,13 @@ function getWidgetType(
     case "provideSignatureInput":
       return TextWidget
     case "hashInput":
-      return HashWidget
+      return (isTwo? HashWidget2 : HashWidget)
     case "provideHashInput":
       return TextWidget
     case "generateHashInput":
-      return GenerateHashWidget
+      return (isTwo? GenerateHashWidget2 : GenerateHashWidget)
     case "timeInput":
-      return TimeWidget
+      return (isTwo? TimeWidget2 : TimeWidget)
     case "valueInput":
       return ValueWidget
     case "timestampTimeInput":
@@ -625,17 +904,17 @@ function getWidgetType(
     case "blockheightTimeInput":
       return NumberWidget
     case "durationInput":
-      return DurationWidget
+      return (isTwo? DurationWidget2 : DurationWidget)
     case "secondsDurationInput":
       return TextWidget
     case "blocksDurationInput":
       return TextWidget
     case "lockTimeInput":
-      return LockTimeWidget
+      return (isTwo? LockTimeWidget2 : LockTimeWidget)
     case "sequenceNumberInput":
       return SequenceNumberWidget
     default:
-      return ParameterWidget
+      return (isTwo ? ParameterWidget2 : ParameterWidget)
   }
 }
 
@@ -726,13 +1005,17 @@ function mapDispatchToSpendInputProps(dispatch, ownProps: { id: string }) {
   }
 }
 
-function mapToComputedProps(state, ownProps: { computeFor: string }) {
+function mapToComputedProps(state, ownProps: any) {
   const id = ownProps.computeFor
+  const { isTwo } = ownProps
   const inputContext = id.split(".").shift() as InputContext
-  const inputsById =
-    inputContext === "contractParameters"
-      ? getInputMap(state)
-      : getSpendInputMap(state)
+  console.log(isTwo)
+  let inputsById
+    if (inputContext === "contractParameters") {
+        inputsById = isTwo ?  state.templates.inputMap2 : getInputMap(state)
+    } else {
+        inputsById = getSpendInputMap(state)
+    }
   if (inputsById === undefined) {
     throw new Error(
       "inputMap should not be undefined when contract inputs are being rendered"
@@ -853,12 +1136,12 @@ export function getWidget2(id: string): JSX.Element {
         widgetTypeConnected = connect(
             mapStateToContractInputProps2,
             mapDispatchToContractInputProps
-        )(focusWidget(getWidgetType(type)))
+        )(focusWidget(getWidgetType(type, true)))
     } else {
         widgetTypeConnected = connect(
             mapStateToSpendInputProps,
             mapDispatchToSpendInputProps
-        )(focusWidget(getWidgetType(type)))
+        )(focusWidget(getWidgetType(type, true)))
     }
     const widget = addID(id)(widgetTypeConnected)
     return (

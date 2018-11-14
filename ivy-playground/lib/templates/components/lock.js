@@ -30,7 +30,8 @@ const Lock = ({ source, contractParameters, error, bytecode, chosenTem }) => {
         if (chosenTem === 'LockWithData') {
             instantiate = (React.createElement("div", null,
                 contractParameters.length > 0 ? (React.createElement(Section, { name: "Contract Arguments" },
-                    React.createElement("div", { className: "form-wrapper" }),
+                    React.createElement("div", { className: "form-wrapper" },
+                        React.createElement(ContractParameters, null)),
                     React.createElement("div", { className: "form-wrapper" }, error ? React.createElement(ErrorAlert, { error: error }) : React.createElement("div", null)))) : (React.createElement("div", null)),
                 React.createElement(EditorTwo, null),
                 React.createElement(Section, { name: "Contract Arguments" },

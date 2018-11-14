@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5151d00e-a3d7-40a1-b94f-d7a265da2ff6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/parameters.js" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/parameters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/src/contracts/components/parameters.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/src/contracts/components/parameters.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +36,7 @@
           <entry key="gitignore" value="1" />
           <entry key="js" value="8" />
           <entry key="ts" value="7" />
-          <entry key="tsx" value="53" />
+          <entry key="tsx" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -41,28 +44,28 @@
           <entry key="JavaScript" value="8" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="7" />
-          <entry key="TypeScript JSX" value="53" />
+          <entry key="TypeScript JSX" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="tsx" value="1991" />
+          <entry key="tsx" value="2655" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="TypeScript JSX" value="1991" />
+          <entry key="TypeScript JSX" value="2655" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+            <state relative-caret-position="355">
+              <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
               <folding>
                 <element signature="e#20#45#0" expanded="true" />
                 <element signature="e#141#191#0" expanded="true" />
@@ -71,14 +74,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/components/parameters.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1809">
-              <caret line="706" column="40" selection-start-line="706" selection-start-column="9" selection-end-line="706" selection-end-column="40" />
+            <state relative-caret-position="-795">
+              <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#102#127#0" expanded="true" />
+                <element signature="e#1610#1669#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/selectors.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/types.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -86,21 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/inputs/types.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/actions.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="102" column="24" selection-start-line="102" selection-start-column="12" selection-end-line="102" selection-end-column="24" />
-              <folding>
-                <element signature="e#78#164#0" expanded="true" />
-                <element signature="e#327#468#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="383">
+              <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -146,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/types.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
+            <state relative-caret-position="589">
               <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
               <folding>
                 <element signature="e#0#65#0" expanded="true" />
@@ -158,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/editorOutTwo.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+            <state relative-caret-position="702">
+              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
               <folding>
                 <element signature="e#20#45#0" expanded="true" />
                 <element signature="e#105#168#0" expanded="true" />
@@ -172,36 +182,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;bad input ID</find>
-      <find>mapDispatchToContractInputProps</find>
-      <find>passProps</find>
-      <find>focusWidget</find>
-      <find>mapStateToContractParametersProps</find>
-      <find>ContractParametersUnconnected</find>
-      <find>inputMap2</find>
-      <find>updateCompiledTwo</find>
-      <find>setSourceTwo</find>
-      <find>getContractParameters</find>
-      <find>parameterIds</find>
-      <find>ContractParametersUnconnectedTwo</find>
-      <find>UPDATE_COMPILED_TWO</find>
-      <find>ContractParameters</find>
-      <find>owninputMap</find>
-      <find>handleChange</find>
-      <find>mapStateToContractInputProps2</find>
-      <find>mapToInputProps2</find>
-      <find>mapStateToContractParametersPropsTwo</find>
-      <find>mapToInputProps</find>
-      <find>mapStateToContractInputProps</find>
-      <find>getWidget2</find>
-      <find>NumberWidget</find>
-      <find>getChildWidget</find>
-      <find>getWidgetType</find>
-      <find>getWidget</find>
-      <find>BytesWidget</find>
-      <find>ContractParametersTwo</find>
-      <find>InputType</find>
       <find>isTwo</find>
+      <find>getChild</find>
+      <find>SequenceNumberWidget</find>
+      <find>function getWidgetType</find>
+      <find>getWidgetType</find>
+      <find>getChildWidget</find>
+      <find>BytesWidget</find>
+      <find>ParameterWidget</find>
+      <find>HashWidget</find>
+      <find>PublicKeyWidget</find>
+      <find>SignatureWidget</find>
+      <find>OptionsWidget</find>
+      <find>DurationWidget</find>
+      <find>TimeWidget</find>
+      <find>LockTimeWidget</find>
+      <find>mapToInputProps2</find>
+      <find>mapToInputProps</find>
+      <find>mapStateToSpendInputProps</find>
+      <find>ComputedValueUnconnected</find>
+      <find>ComputedValue</find>
+      <find>GeneratePublicKeyWidget</find>
+      <find>GenerateSignatureWidget</find>
+      <find>GenerateSignatureWidget2</find>
+      <find>GenerateBytesWidget</find>
+      <find>GenerateHashWidget</find>
+      <find>computedValue</find>
+      <find>mapToComputedProps</find>
+      <find>mapStateToComputedInputProps</find>
+      <find>getInputMap</find>
+      <find>mapStateToContractInputProps</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -220,8 +230,8 @@
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/actions.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/reducer.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/selectors.tsx" />
-        <option value="$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/contracts/components/parameters.tsx" />
+        <option value="$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx" />
       </list>
     </option>
   </component>
@@ -242,7 +252,7 @@
       <path value="$PROJECT_DIR$/ivy-playground/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -251,6 +261,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,7 +325,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,12 +366,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542079186722</updated>
       <workItem from="1542079190702" duration="24071000" />
-      <workItem from="1542159887290" duration="376000" />
+      <workItem from="1542159887290" duration="9714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24447000" />
+    <option name="totallyTimeSpent" value="33785000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,10 +383,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -389,7 +399,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -473,6 +483,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#20#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -529,13 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/selectors.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="400" column="44" lean-forward="true" selection-start-line="400" selection-start-column="44" selection-end-line="400" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/loadTemplate.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -565,24 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="3624" column="61" lean-forward="true" selection-start-line="3624" selection-start-column="61" selection-end-line="3624" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
-          <folding>
-            <element signature="e#20#45#0" expanded="true" />
-            <element signature="e#141#191#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/inputs/types.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="126" column="17" selection-start-line="126" selection-start-column="17" selection-end-line="126" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -629,20 +617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/types.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/editorOutTwo.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+        <state relative-caret-position="702">
+          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
           <folding>
             <element signature="e#20#45#0" expanded="true" />
             <element signature="e#105#168#0" expanded="true" />
@@ -650,12 +628,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/inputs/types.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/types.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/selectors.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/types.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/components/parameters.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1809">
-          <caret line="706" column="40" selection-start-line="706" selection-start-column="9" selection-end-line="706" selection-end-column="40" />
+        <state relative-caret-position="-795">
+          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#102#127#0" expanded="true" />
+            <element signature="e#1610#1669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+          <folding>
+            <element signature="e#20#45#0" expanded="true" />
+            <element signature="e#141#191#0" expanded="true" />
           </folding>
         </state>
       </provider>
