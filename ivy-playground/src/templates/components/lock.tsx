@@ -74,7 +74,7 @@ const Lock = ({ source, contractParameters, error, bytecode, chosenTem }) => {
                           {error ? <ErrorAlert error={error} /> : <div />}
                       </div>
                   </Section>
-                  <LockButton />
+                  <LockButton isTwo = {true} />
               </div>
           )
       } else {

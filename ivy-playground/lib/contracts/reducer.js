@@ -64,6 +64,7 @@ export default function reducer(state = INITIAL_STATE, action) {
                 instantiated
             };
             const contractId = contract.id;
+            console.log('contract');
             return Object.assign({}, state, { contractMap: Object.assign({}, state.contractMap, { [contractId]: contract }), idList: [...state.idList, contractId] });
         }
         case UPDATE_CLAUSE_INPUT: {

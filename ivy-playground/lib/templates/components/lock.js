@@ -38,7 +38,7 @@ const Lock = ({ source, contractParameters, error, bytecode, chosenTem }) => {
                     React.createElement("div", { className: "form-wrapper" },
                         React.createElement(ContractParametersTwo, null)),
                     React.createElement("div", { className: "form-wrapper" }, error ? React.createElement(ErrorAlert, { error: error }) : React.createElement("div", null))),
-                React.createElement(LockButton, null)));
+                React.createElement(LockButton, { isTwo: true })));
         }
         else {
             instantiate = (React.createElement("div", null,

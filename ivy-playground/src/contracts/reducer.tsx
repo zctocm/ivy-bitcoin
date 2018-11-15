@@ -126,6 +126,7 @@ export default function reducer(
         instantiated
       }
       const contractId = contract.id
+        console.log('contract')
       return {
         ...state,
         contractMap: {

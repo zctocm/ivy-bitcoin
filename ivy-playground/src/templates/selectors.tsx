@@ -40,6 +40,10 @@ export const getInputMap = createSelector(
   templateState => templateState.inputMap
 )
 
+export const getInputMap2 = createSelector(
+    getTemplateState,
+    templateState => templateState.inputMap2
+)
 export const getInputList = createSelector(getInputMap, inputMap => {
   if (inputMap === undefined) {
     return undefined

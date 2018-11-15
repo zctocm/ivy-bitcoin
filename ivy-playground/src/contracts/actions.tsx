@@ -8,7 +8,9 @@ import {
 } from "../templates/actions"
 import {
   getCompiled,
+  getCompiled2,
   getInputMap,
+  getInputMap2,
   getInstantiated,
   getSource
 } from "../templates/selectors"
@@ -59,7 +61,27 @@ export const create = () => {
     dispatch(push("/unlock"))
   }
 }
+export const create2 = () => {
+    return (dispatch, getState) => {
+        const state = getState()
+        const inputMap = getInputMap(state)
+        const template = getCompiled(state)
+        const instantiated = getInstantiated(state)
 
+        console.log('instantiated', instantiated)
+        const inputMap2 = getInputMap2(state)
+        const template2 = getCompiled2(state)
+
+        dispatch({
+            type: CREATE_CONTRACT,
+            instantiated,
+            template,
+            inputMap
+        })
+
+        dispatch(push("/unlock"))
+    }
+}
 export const SPEND_CONTRACT = "contracts/SPEND_CONTRACT"
 
 export const spend = () => {

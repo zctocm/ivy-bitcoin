@@ -14,6 +14,7 @@ export const getTemplate = (id) => {
     return createSelector(getSourceMap, sourceMap => sourceMap[id]);
 };
 export const getInputMap = createSelector(getTemplateState, templateState => templateState.inputMap);
+export const getInputMap2 = createSelector(getTemplateState, templateState => templateState.inputMap2);
 export const getInputList = createSelector(getInputMap, inputMap => {
     if (inputMap === undefined) {
         return undefined;
