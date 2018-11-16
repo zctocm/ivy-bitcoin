@@ -1,0 +1,4 @@
+{
+  "presets": [["env", { "useBuiltIns": true }]],
+  "plugins": [["transform-runtime", { "regenerator": true }]]
+}
