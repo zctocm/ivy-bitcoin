@@ -13,7 +13,6 @@ import {
   getResult,
   getSpendContractId
 } from "../../contracts/selectors"
-import { Contract } from "../types"
 
 // internal imports
 import SpendInputs from "./argsDisplay"

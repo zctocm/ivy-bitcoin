@@ -22,7 +22,7 @@ const Editor = ({ source, error, isBch }) => {
         React.createElement(ReactTooltip, { id: "saveButtonTooltip", place: "bottom", type: "error", effect: "solid" }),
         React.createElement("div", { className: "panel panel-default" },
             React.createElement("div", { className: "panel-heading clearfix" },
-                React.createElement("h1", { className: "panel-title pull-left" }, isBch ? 'Contract Template ( out1 )' : 'Contract Template'),
+                React.createElement("h1", { className: "panel-title pull-left" }, isBch ? 'Contract Template ( Out1 )' : 'Contract Template'),
                 React.createElement("ul", { className: "panel-heading-btns pull-right" },
                     React.createElement("li", null,
                         React.createElement(LoadTemplate, null)),

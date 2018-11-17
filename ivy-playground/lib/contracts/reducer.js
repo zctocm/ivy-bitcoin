@@ -48,7 +48,6 @@ export default function reducer(state = INITIAL_STATE, action) {
         case CREATE_CONTRACT: {
             const instantiated = action.instantiated;
             console.log('instantiated', instantiated);
-            console.log('instantiated', action);
             if (instantiated.fundingTransaction === undefined) {
                 throw new Error("did not expect funding transaction to be undefined");
             }
@@ -66,7 +65,6 @@ export default function reducer(state = INITIAL_STATE, action) {
                 instantiated
             };
             const contractId = contract.id;
-            console.log('contract');
             return Object.assign({}, state, { contractMap: Object.assign({}, state.contractMap, { [contractId]: contract }), idList: [...state.idList, contractId] });
         }
         case UPDATE_CLAUSE_INPUT: {

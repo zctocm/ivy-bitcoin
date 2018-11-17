@@ -33,7 +33,7 @@ const Editor = ({ source, error, isBch }) => {
       <div className="panel panel-default">
         <div className="panel-heading clearfix">
           <h1 className="panel-title pull-left">
-              {isBch ?  'Contract Template ( out1 )' :  'Contract Template'}
+              {isBch ?  'Contract Template ( Out1 )' :  'Contract Template'}
           </h1>
           <ul className="panel-heading-btns pull-right">
             <li>

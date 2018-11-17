@@ -7,6 +7,7 @@ import contracts from "../contracts"
 import templates from "../templates"
 
 import { DEMO_CONTRACTS, DEMO_ID_LIST } from "ivy-bitcoin"
+import { updateChosenTemplate, loadTemplate} from "../templates/actions"
 
 export const RESET: string = "app/RESET"
 
@@ -18,6 +19,7 @@ export const reset = () => {
     }
     dispatch(push("/"))
     dispatch({ type: RESET })
-    dispatch(templates.actions.loadTemplate(selected))
+    dispatch(loadTemplate(selected))
+    dispatch(updateChosenTemplate(selected))
   }
 }
