@@ -9,6 +9,7 @@ export const getTemplateState = (state) => {
 export const getError = createSelector(getTemplateState, state => state.error);
 export const getSourceMap = createSelector(getTemplateState, state => state.sourceMap);
 export const getSource = createSelector(getTemplateState, state => state.source);
+export const getSource2 = createSelector(getTemplateState, state => state.source2);
 export const getTemplateIds = createSelector(getTemplateState, state => state.idList);
 export const getTemplate = (id) => {
     return createSelector(getSourceMap, sourceMap => sourceMap[id]);
@@ -47,6 +48,21 @@ export const getParameterIds2 = createSelector(getContractParameters2, contractP
         contractParameters.map(param => "contractParameters." + param.name));
 });
 export const areInputsValid = createSelector(getInputMap, getParameterIds, (inputMap, parameterIds) => {
+    if (parameterIds === undefined || inputMap === undefined) {
+        return false;
+    }
+    try {
+        parameterIds.filter(id => {
+            getData(id, inputMap);
+        });
+        return true;
+    }
+    catch (e) {
+        // console.log(e)
+        return false;
+    }
+});
+export const areInputsValid2 = createSelector(getInputMap2, getParameterIds2, (inputMap, parameterIds) => {
     if (parameterIds === undefined || inputMap === undefined) {
         return false;
     }
@@ -154,6 +170,44 @@ export const getSaveability = createSelector(getCompiled, getSourceMap, getError
     };
 });
 export const getCreateability = createSelector(getSource, getSourceMap, getCompiled, areInputsValid, getError, (source, sourceMap, compiled, inputsAreValid, error) => {
+    if (compiled === undefined) {
+        return {
+            createable: false,
+            error: "Contract template has not been compiled."
+        };
+    }
+    if (error !== undefined) {
+        return {
+            createable: false,
+            error: "Contract template is not valid Ivy."
+        };
+    }
+    if (!inputsAreValid) {
+        return {
+            createable: false,
+            error: "One or more arguments to the contract are invalid."
+        };
+    }
+    const name = compiled.name;
+    const savedSource = sourceMap[name];
+    if (savedSource === undefined) {
+        return {
+            createable: false,
+            error: "Contract template must be saved before it can be instantiated."
+        };
+    }
+    if (savedSource !== source) {
+        return {
+            createable: false,
+            error: "Contract template must be saved (under an unused name) before it can be instantiated."
+        };
+    }
+    return {
+        createable: true,
+        error: ""
+    };
+});
+export const getCreateability2 = createSelector(getSource2, getSourceMap, getCompiled2, areInputsValid2, getError, (source, sourceMap, compiled, inputsAreValid, error) => {
     if (compiled === undefined) {
         return {
             createable: false,

@@ -8,25 +8,27 @@ import { create,  create2} from "../../contracts/actions"
 
 // internal imports
 import { Col, Grid, Row } from "react-bootstrap"
-import { getCreateability } from "../selectors"
+import { getCreateability, getCreateability2 } from "../selectors"
 
 const LockButton = (props: {
-  createability: { createable: boolean; error: string }
+  createability: { createable: boolean; error: string },
+  createability2: { createable: boolean; error: string },
   create: (e) => undefined,
   create2: (e) => undefined,
   isTwo?: boolean
 }) => {
   const { isTwo } = props
+  console.log('createability2', props.createability2)
   const button = (
     <button
       className="btn btn-primary btn-lg form-button"
-      disabled={!props.createability.createable}
+      disabled={!props.createability.createable || !props.createability2.createable}
       onClick={ isTwo ? props.create2 : props.create }
     >
       Create
     </button>
   )
-  if (props.createability.createable) {
+  if (props.createability.createable && props.createability2.createable) {
     return (
       <Grid>
         <Row>
@@ -41,7 +43,7 @@ const LockButton = (props: {
           <Col>
             <div
               data-for="lockButtonTooltip"
-              data-tip={props.createability.error}
+              data-tip={props.createability.error || props.createability2.error}
               style={{ width: 119, height: 45 }}
             >
               {button}
@@ -52,7 +54,7 @@ const LockButton = (props: {
               type="error"
               effect="solid"
             >
-              {props.createability.error}
+              {props.createability.error || props.createability2.error}
             </ReactTooltip>
           </Col>
         </Row>
@@ -61,6 +63,11 @@ const LockButton = (props: {
   }
 }
 
-export default connect(state => ({ createability: getCreateability(state) }), {
-    create, create2
-})(LockButton)
+export default connect(state => (
+      {
+          createability: getCreateability(state),
+          createability2: getCreateability2(state),
+      }
+    ),
+    { create, create2 }
+)(LockButton)
