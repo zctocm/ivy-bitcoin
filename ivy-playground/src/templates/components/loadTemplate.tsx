@@ -10,7 +10,6 @@ import {loadTemplate, updateChosenTemplate} from "../actions"
 import {getTemplateIds} from "../selectors"
 
 const mapStateToProps = (state: AppState) => {
-    console.log('state', state)
     return {
         idList: getTemplateIds(state)
     }
@@ -26,6 +25,7 @@ const mapDispatchToProps = dispatch => ({
 
 const LoadTemplate = ({idList, selected, handleClick, chooseTem}) => {
     const options = idList.map(id => {
+        // todo 判断key 隐藏output 2
         return (
             <li key={id}>
                 <a

@@ -106,7 +106,7 @@ const Lock = ({ source, contractParameters, error, bytecode, chosenTem }) => {
   }
   return (
     <div>
-      <Editor />
+      <Editor isBch={ chosenTem === 'LockWithData' ? true : false}/>
       {instantiate}
     </div>
   )

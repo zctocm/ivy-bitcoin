@@ -25,7 +25,7 @@ const Editor = ({ source }) => {
     <div>
       <div className="panel panel-default">
         <div className="panel-heading clearfix">
-          <h1 className="panel-title pull-left">Contract Template</h1>
+          <h1 className="panel-title pull-left">Contract Template ( Out2 )</h1>
           <ul className="panel-heading-btns pull-right">
           </ul>
         </div>
