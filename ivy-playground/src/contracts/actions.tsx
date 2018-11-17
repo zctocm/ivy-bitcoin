@@ -12,6 +12,7 @@ import {
   getInputMap,
   getInputMap2,
   getInstantiated,
+  getInstantiated2,
   getSource
 } from "../templates/selectors"
 
@@ -68,17 +69,24 @@ export const create2 = () => {
         const template = getCompiled(state)
         const instantiated = getInstantiated(state)
 
-        console.log('instantiated', instantiated)
         const inputMap2 = getInputMap2(state)
         const template2 = getCompiled2(state)
+        const instantiated2 = getInstantiated2(state)
+        console.log('instantiated2', instantiated2)
+
+        // dispatch({
+        //     type: CREATE_CONTRACT,
+        //     instantiated,
+        //     template,
+        //     inputMap
+        // })
 
         dispatch({
             type: CREATE_CONTRACT,
-            instantiated,
-            template,
-            inputMap
+            instantiated2,
+            template2,
+            inputMap2
         })
-
         dispatch(push("/unlock"))
     }
 }

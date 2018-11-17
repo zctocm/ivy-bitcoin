@@ -85,7 +85,36 @@ export const getContractArgs = createSelector(getParameterIds, getInputMap, (par
         return undefined;
     }
 });
+export const getContractArgs2 = createSelector(getParameterIds2, getInputMap2, (parameterIds, inputMap) => {
+    if (parameterIds === undefined || inputMap === undefined) {
+        return undefined;
+    }
+    try {
+        const contractArgs = [];
+        for (const id of parameterIds) {
+            if (inputMap[id].value === "valueInput" &&
+                !isValidInput(id + ".valueInput", inputMap)) {
+                // don't let invalid Values prevent compilation
+                contractArgs.push(NaN);
+            }
+            else {
+                contractArgs.push(getData(id, inputMap));
+            }
+        }
+        return contractArgs;
+    }
+    catch (e) {
+        // console.log(e)
+        return undefined;
+    }
+});
 export const getInstantiated = createSelector(getCompiled, getContractArgs, (template, contractArgs) => {
+    if (template === undefined || contractArgs === undefined) {
+        return undefined;
+    }
+    return instantiate(template, contractArgs);
+});
+export const getInstantiated2 = createSelector(getCompiled2, getContractArgs2, (template, contractArgs) => {
     if (template === undefined || contractArgs === undefined) {
         return undefined;
     }

@@ -13,6 +13,7 @@ import { getCreateability } from "../selectors"
 const LockButton = (props: {
   createability: { createable: boolean; error: string }
   create: (e) => undefined,
+  create2: (e) => undefined,
   isTwo?: boolean
 }) => {
   const { isTwo } = props
