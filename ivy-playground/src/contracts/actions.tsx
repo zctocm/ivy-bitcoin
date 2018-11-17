@@ -108,7 +108,7 @@ export const spend = () => {
       throw Error("spend called with invalid contract")
       // console.log(result)
     }
-
+    console.log('fulfill', spendTx)
     dispatch(push("/unlock"))
   }
 }
