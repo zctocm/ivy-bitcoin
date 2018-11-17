@@ -42,18 +42,17 @@ export const create2 = () => {
         const inputMap2 = getInputMap2(state);
         const template2 = getCompiled2(state);
         const instantiated2 = getInstantiated2(state);
-        console.log('instantiated2', instantiated2);
-        // dispatch({
-        //     type: CREATE_CONTRACT,
-        //     instantiated,
-        //     template,
-        //     inputMap
-        // })
         dispatch({
             type: CREATE_CONTRACT,
-            instantiated2,
-            template2,
-            inputMap2
+            instantiated,
+            template,
+            inputMap
+        });
+        dispatch({
+            type: CREATE_CONTRACT,
+            instantiated: instantiated2,
+            template: template2,
+            inputMap: inputMap2
         });
         dispatch(push("/unlock"));
     };

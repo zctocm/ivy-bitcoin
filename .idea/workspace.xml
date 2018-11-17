@@ -3,11 +3,54 @@
   <component name="ChangeListManager">
     <list default="true" id="5151d00e-a3d7-40a1-b94f-d7a265da2ff6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/lib/contracts/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/lib/templates/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/components/navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/components/radioselect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/components/reset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/components/root.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/components/section.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/app/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/argsDisplay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/clauseselect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/lockedValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/parameters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/transactionDetailInputs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/unlock.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/unlockButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/components/unlockDestination.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/contracts/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/entry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/inputs/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/inputs/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/inputs/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/ace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/editor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/editorOutTwo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/errorAlert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/helpicon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/loadTemplate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/lock.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/lockButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/opcodes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/components/saveTemplate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/selectors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/lib/templates/types.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ivy-playground/src/contracts/actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/src/contracts/actions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivy-playground/src/templates/components/lockButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/src/templates/components/lockButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivy-playground/src/templates/selectors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/src/templates/selectors.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/src/contracts/reducer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/src/contracts/reducer.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,7 +80,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="js" value="18" />
+          <entry key="js" value="19" />
           <entry key="json" value="1" />
           <entry key="ts" value="10" />
           <entry key="tsx" value="96" />
@@ -46,7 +89,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="18" />
+          <entry key="JavaScript" value="19" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="10" />
           <entry key="TypeScript JSX" value="96" />
@@ -55,51 +98,24 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="75" />
-          <entry key="tsx" value="3320" />
+          <entry key="tsx" value="3365" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="75" />
-          <entry key="TypeScript JSX" value="3320" />
+          <entry key="TypeScript JSX" value="3365" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
-              <folding>
-                <element signature="e#20#45#0" expanded="true" />
-                <element signature="e#141#191#0" expanded="true" />
-                <element signature="e#409#522#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/lockButton.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-              <folding>
-                <element signature="e#20#45#0" expanded="true" />
-                <element signature="e#220#268#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/actions.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="84" column="33" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="33" />
+            <state relative-caret-position="296">
+              <caret line="72" column="45" lean-forward="true" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
               <folding>
                 <element signature="e#78#164#0" expanded="true" />
               </folding>
@@ -124,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2476">
-              <caret line="160" column="24" lean-forward="true" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
+              <caret line="160" column="24" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -132,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/reducer.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1062">
-              <caret line="72" column="24" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="24" />
+            <state relative-caret-position="377">
+              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -141,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/reducer.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+            <state relative-caret-position="287">
+              <caret line="111" column="47" lean-forward="true" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#566#716#0" expanded="true" />
@@ -155,8 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PublicKeyWidget</find>
-      <find>getWidgetType</find>
       <find>UPDATEINPUT</find>
       <find>updateInput</find>
       <find>getTemplateState</find>
@@ -176,15 +190,17 @@
       <find>idList</find>
       <find>mapDispatchToContractInputProps</find>
       <find>ContractParameters</find>
-      <find>CREATE_CONTRACT</find>
       <find>create</find>
       <find>getCreateability</find>
       <find>getInstantiated</find>
       <find>LockButton</find>
-      <find>create2</find>
       <find>getCompiled2</find>
       <find>getContractArgs2</find>
+      <find>create2</find>
+      <find>__WEBPACK_IMPORTED_MODULE_1__actions__</find>
+      <find>fundingTransaction</find>
       <find>getInstantiated2</find>
+      <find>CREATE_CONTRACT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,12 +217,12 @@
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/components/loadTemplate.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/actions.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/lib/templates/reducer.js" />
-        <option value="$PROJECT_DIR$/ivy-playground/src/contracts/reducer.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/contracts/components/parameters.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/reducer.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/components/lockButton.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/templates/selectors.tsx" />
+        <option value="$PROJECT_DIR$/ivy-playground/src/contracts/reducer.tsx" />
         <option value="$PROJECT_DIR$/ivy-playground/src/contracts/actions.tsx" />
       </list>
     </option>
@@ -321,12 +337,12 @@
       <updated>1542079186722</updated>
       <workItem from="1542079190702" duration="24071000" />
       <workItem from="1542159887290" duration="28416000" />
-      <workItem from="1542419967748" duration="3651000" />
+      <workItem from="1542419967748" duration="4487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56138000" />
+    <option name="totallyTimeSpent" value="56974000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,6 +437,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding>
+            <element signature="e#20#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -522,15 +541,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/lib/contracts/reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#20#45#0" expanded="true" />
+            <element signature="e#105#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,33 +638,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx">
+    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
-          <folding>
-            <element signature="e#20#45#0" expanded="true" />
-            <element signature="e#141#191#0" expanded="true" />
-            <element signature="e#409#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/reducer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="72" column="24" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/reducer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#566#716#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2476">
+          <caret line="160" column="24" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -666,10 +656,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts">
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/components/lock.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2476">
-          <caret line="160" column="24" lean-forward="true" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
+        <state relative-caret-position="479">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+          <folding>
+            <element signature="e#20#45#0" expanded="true" />
+            <element signature="e#141#191#0" expanded="true" />
+            <element signature="e#409#522#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,10 +679,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/templates/reducer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/lib/contracts/reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/reducer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="111" column="47" lean-forward="true" selection-start-line="111" selection-start-column="47" selection-end-line="111" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#566#716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/actions.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="84" column="33" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="33" />
+        <state relative-caret-position="296">
+          <caret line="72" column="45" lean-forward="true" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
           <folding>
             <element signature="e#78#164#0" expanded="true" />
           </folding>
