@@ -119,7 +119,7 @@ export function symbolToOpcode(sym: string, argMap: Map<string, any>) {
   return Opcode.fromSymbol(sym)
 }
 
-export function instantiate(
+export function instantiate2(
   template: Template,
   args: Array<Buffer | number>,
   seed = crypto.randomBytes(32)
@@ -155,7 +155,7 @@ export function instantiate(
   const tx = createFundingTransaction(testnetAddress, valueArgs, seed)
   // if (tx === undefined) {
   //   throw new Error(
-  //     "expected tx to not be undefined when called in instantiate"
+  //     "expected tx to not be undefined when called in instantiate2"
   //   )
   // }
   const instantiated = {
