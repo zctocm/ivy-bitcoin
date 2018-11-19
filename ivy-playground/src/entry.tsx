@@ -41,7 +41,7 @@ const selected = templates.selectors.getSelectedTemplate(store.getState())
 store.dispatch(templates.actions.loadTemplate(selected) as any)
 render(
   <Provider store={store}>
-    <DocumentTitle title="Ivy Playground for Bitcoin Cash">
+    <DocumentTitle title="Playground for Bitcoin Cash">
       <ConnectedRouter history={history}>
         <app.components.Root>
           <Switch>

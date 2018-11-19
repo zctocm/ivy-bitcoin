@@ -23,7 +23,7 @@ const store = createStore(app.reducer, composeEnhancers(applyMiddleware(thunk), 
 const selected = templates.selectors.getSelectedTemplate(store.getState());
 store.dispatch(templates.actions.loadTemplate(selected));
 render(React.createElement(Provider, { store: store },
-    React.createElement(DocumentTitle, { title: "Ivy Playground for Bitcoin Cash" },
+    React.createElement(DocumentTitle, { title: "Playground for Bitcoin Cash" },
         React.createElement(ConnectedRouter, { history: history },
             React.createElement(app.components.Root, null,
                 React.createElement(Switch, null,
