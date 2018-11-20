@@ -2,14 +2,19 @@ import { createTypeSignature, TypeSignature } from "./types"
 
 import { BugError } from "../errors"
 
-export type ComparisonOperator = "==" | "!="
-
+export type ComparisonOperator = 
+  | "=="  
+  | "!="
+  | ">"
+  | "<"
+  
 export function isComparisonOperator(str: string): str is ComparisonOperator {
-  return ["==", "!="].indexOf(str) !== -1
+  return ["==", "!=", ">", "<"].indexOf(str) !== -1
 }
 
 export type FunctionName =
   | "checkSig"
+  | "checkDataSig"
   | "ripemd160"
   | "sha1"
   | "sha256"
@@ -18,6 +23,7 @@ export type FunctionName =
   | "checkMultiSig"
   | "bytes"
   | "size"
+
 
 export type Opcode = string // for now
 
@@ -38,6 +44,8 @@ export function getOpcodes(instruction: Instruction): Opcode[] {
   switch (instruction) {
     case "checkSig":
       return ["CHECKSIG"]
+    case "checkDataSig":
+      return ["CHECKDATASIG"]
     case "ripemd160":
       return ["RIPEMD160"]
     case "sha1":
@@ -58,6 +66,11 @@ export function getOpcodes(instruction: Instruction): Opcode[] {
       return []
     case "size":
       return ["SIZE", "SWAP", "DROP"]
+    case ">":
+      return ["GREATERTHAN", "DROP", "1"]  
+    case "<":
+      return ["LESSTHAN", "DROP", "1"]  
+
   }
 }
 
@@ -65,6 +78,8 @@ export function getTypeSignature(instruction: Instruction): TypeSignature {
   switch (instruction) {
     case "checkSig":
       return createTypeSignature(["PublicKey", "Signature"], "Boolean")
+    case "checkDataSig":
+      return createTypeSignature(["PublicKey", "Bytes", "Signature"], "Boolean")
     case "older":
       return createTypeSignature(["Duration"], "Boolean")
     case "after":
@@ -81,6 +96,8 @@ export function getTypeSignature(instruction: Instruction): TypeSignature {
       )
     case "==":
     case "!=":
+    case ">": 
+    case "<":
       throw new Error("should not call getTypeSignature on == or !=")
     case "ripemd160":
     case "sha1":
