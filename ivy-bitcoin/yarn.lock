@@ -74,8 +74,9 @@ bclient@~0.1.4:
     bcurl "~0.1.3"
     bsert "~0.0.4"
 
-bcoin@../bcoin:
-  version "1.0.2"
+bcoin@aNewAccount/bcash#master:
+  version "1.1.0"
+  resolved "https://codeload.github.com/aNewAccount/bcash/tar.gz/d831484f75ed2b47a229dff3889d9f663b16587c"
   dependencies:
     bcfg "~0.1.3"
     bclient "~0.1.4"
@@ -95,7 +96,7 @@ bcoin@../bcoin:
     bsip "~0.1.2"
     bsock "~0.1.3"
     bsocks "~0.2.2"
-    bstring "~0.3.0"
+    bstring "~0.3.2"
     btcp "~0.1.2"
     buffer-map "~0.0.3"
     bufio "~1.0.2"
@@ -252,7 +253,7 @@ bsocks@~0.2.2:
     binet "~0.3.2"
     bsert "~0.0.4"
 
-bstring@~0.3.0:
+bstring@~0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/bstring/-/bstring-0.3.2.tgz#50dcfc347ab1177a5bd8d1dcb0bb7af196876dde"
   dependencies:
