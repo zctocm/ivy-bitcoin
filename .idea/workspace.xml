@@ -9,294 +9,16 @@
       <change afterPath="$PROJECT_DIR$/bcoin/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bcoin/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/bcoin/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/.circleci/config.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/.eslintfiles" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/bench.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/chacha.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/coins.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/merkle.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/mnemonic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/template-sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/tx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bench/walletdb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bin/bcash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bin/bwallet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bin/cli" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bin/node" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bin/spvnode" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/bin/wallet" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/browser/debug.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/browser/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/browser/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/browser/src/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/browser/src/proxysocket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/browser/wsproxy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Beginner's-Guide.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/CLI.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Configuration.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Design.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/client-api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/connect-to-peer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/connect-to-the-p2p-network.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/create-a-blockchain-and-mempool.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/create-sign-tx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/fullnode-and-wallet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/fullnode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/get-tx-from-chain.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/miner-configs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/peers-plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/spv-sync-wallet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Examples/wallet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Running-in-the-browser.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/docs/Wallet-System.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/etc/sample.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/etc/sample.wallet.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/jsdoc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/bcoin-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/bcoin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/blockchain/chain.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/blockchain/chaindb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/blockchain/chainentry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/blockchain/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/blockchain/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/blockchain/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/btc/amount.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/btc/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/btc/uri.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/coins/coinentry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/coins/coins.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/coins/coinview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/coins/compress.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/coins/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/coins/undocoins.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/hd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/mnemonic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/nfkd-compat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/nfkd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/private.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/public.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/udata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/unorm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/wordlist-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/wordlist.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/chinese-simplified.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/chinese-traditional.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/english.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/french.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/italian.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/japanese.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/hd/words/spanish.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/addrindexer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/chainclient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/indexer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/nullclient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/records.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/indexer/txindexer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mempool/fees.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mempool/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mempool/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mempool/mempool.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mempool/mempoolentry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mining/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mining/cpuminer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mining/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mining/mine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mining/miner.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/mining/template.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/bip152.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/framer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/hostlist.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/netaddress.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/packets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/parser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/peer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/pool.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/seeds/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/seeds/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/net/seeds/testnet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/node/fullnode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/node/http.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/node/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/node/node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/node/rpc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/node/spvnode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/pkg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/abstractblock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/address.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/block.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/coin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/headers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/invitem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/keyring.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/memblock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/merkleblock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/mtx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/outpoint.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/output.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/tx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/primitives/txmeta.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/protocol/consensus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/protocol/errors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/protocol/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/protocol/network.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/protocol/networks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/protocol/policy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/protocol/timedata.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/opcode.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/scripterror.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/scriptnum.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/sigcache.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/script/stack.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/types.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/utils/binary.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/utils/fixed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/utils/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/utils/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/account.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/http.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/masterkey.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/nodeclient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/nullclient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/path.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/records.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/rpc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/txdb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/wallet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/walletdb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/wallet/walletkey.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/child-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/child.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/framer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/jobs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/master.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/packets.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/parent-browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/parent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/parser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/lib/workers/workerpool.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/migrate/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/migrate/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/migrate/latest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/scripts/certs.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/scripts/dump.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/scripts/gen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/scripts/seeds.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/snap/snapcraft.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/address-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/block-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/chain-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/coin-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/coins-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/consensus-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/bip69.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/block1.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/block300025-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/block300025.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/block426884.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/block898352.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/block928828-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/block928828.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/coin1.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/compact426884.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/compact898352.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/hd.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/headers1.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/merkle300025.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/mnemonic-english.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/mnemonic-japanese.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/script-tests.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/sighash-tests.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx-invalid.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx-valid.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx1-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx1.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx10-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx10.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx2-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx2.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx3-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx3.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx4-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx4.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx6-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx6.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx7-undo.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx7.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx8.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/data/tx9.raw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/hd-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/headers-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/http-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/input-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/keyring-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/magnetic-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/mempool-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/mining-template-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/mnemonic-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/monolith-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/node-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/outpoint-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/pow-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/protocol-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/script-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/tx-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/txmeta-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/util/assert.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/util/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/util/memwallet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/util/node-context.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/utils-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/test/wallet-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/webpack.app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/webpack.browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bcash/webpack.compat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bcash" beforeDir="false" afterPath="$PROJECT_DIR$/bcash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bcash/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bcash/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bcoin" beforeDir="false" afterPath="$PROJECT_DIR$/bcoin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bcoin/lib/bcoin-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/bcoin/lib/bcoin-browser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bcoin/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/bcoin/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/js/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/language/BitcoinScript.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/language/BitcoinScript.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/language/IvySyntax.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/language/IvySyntax.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/playground/CreatingContracts.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/playground/CreatingContracts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/playground/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/playground/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivy-bitcoin/lib/instantiate.js" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-bitcoin/lib/instantiate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivy-bitcoin/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ivy-bitcoin/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-bitcoin/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-bitcoin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-bitcoin/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ivy-playground/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ivy-playground/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -319,35 +41,36 @@
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TsLintLanguageService" value="3" />
-          <entry key="TypeScriptServerServiceImpl" value="3" />
+          <entry key="TsLintLanguageService" value="4" />
+          <entry key="TypeScriptServerServiceImpl" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="1" />
-          <entry key="js" value="59" />
-          <entry key="json" value="12" />
+          <entry key="gitignore" value="5" />
+          <entry key="js" value="60" />
+          <entry key="json" value="14" />
           <entry key="png" value="3" />
-          <entry key="ts" value="46" />
+          <entry key="ts" value="47" />
           <entry key="tsx" value="142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="3" />
-          <entry key="JSON" value="12" />
-          <entry key="JavaScript" value="59" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="46" />
+          <entry key="JSON" value="14" />
+          <entry key="JavaScript" value="60" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="TypeScript" value="47" />
           <entry key="TypeScript JSX" value="142" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="gitignore" value="2" />
           <entry key="js" value="154" />
           <entry key="json" value="8" />
-          <entry key="ts" value="14" />
+          <entry key="ts" value="19" />
           <entry key="tsx" value="3869" />
         </counts>
       </usages-collector>
@@ -355,7 +78,8 @@
         <counts>
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="154" />
-          <entry key="TypeScript" value="14" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="TypeScript" value="19" />
           <entry key="TypeScript JSX" value="3869" />
         </counts>
       </usages-collector>
@@ -364,72 +88,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/spend.ts">
+        <entry file="file://$PROJECT_DIR$/ivy-bitcoin/lib/instantiate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-910">
-              <caret line="14" column="32" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="286">
+              <caret line="58" column="20" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bcoin/package.json">
+        <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bcoin/lib/bcoin-browser.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="105" column="37" lean-forward="true" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+            <state relative-caret-position="216">
+              <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#!!block;n#Output#0" />
+                <element signature="n#!!block;n#TransactionJSON#0" />
+                <element signature="n#!!block;n#Transaction#0" />
+                <element signature="e#1295#1412#0" />
+                <element signature="e#1491#1532#0" />
+                <element signature="n#!!block;n#symbolToOpcode#0" />
+                <element signature="e#3096#3184#0" />
+                <element signature="e#3885#4297#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bcash/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bcash/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1044">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ivy-bitcoin/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="769">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ivy-bitcoin/lib/instantiate.js">
+        <entry file="file://$PROJECT_DIR$/ivy-playground/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/crypto.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" selection-start-line="1" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bcoin/node_modules/bcrypto/lib/random.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bcoin/node_modules/bcrypto/lib/native/random.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-623">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="769">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
             </state>
           </provider>
         </entry>
@@ -438,7 +160,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hd</find>
       <find>set</find>
       <find>network</find>
       <find>cache</find>
@@ -459,7 +180,6 @@
       <find>NetAddress</find>
       <find>crypto_1</find>
       <find>bcoin</find>
-      <find>instantiate</find>
       <find>KeyRing</find>
       <find>main</find>
       <find>random</find>
@@ -467,7 +187,9 @@
       <find>bcrypto</find>
       <find>bcoin_1</find>
       <find>randomBytes</find>
+      <find>random.randomBytes</find>
       <find>bcoin_1.crypto</find>
+      <find>instantiate</find>
     </findStrings>
     <replaceStrings>
       <replace>bcoin_1.Opcode</replace>
@@ -521,6 +243,11 @@
         <option value="$PROJECT_DIR$/ivy-bitcoin/lib/crypto.js" />
         <option value="$PROJECT_DIR$/bcoin/lib/bcoin-browser.js" />
         <option value="$PROJECT_DIR$/ivy-bitcoin/lib/instantiate.js" />
+        <option value="$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/bcash/.gitignore" />
+        <option value="$PROJECT_DIR$/ivy-bitcoin/.gitignore" />
+        <option value="$PROJECT_DIR$/ivy-playground/.gitignore" />
       </list>
     </option>
   </component>
@@ -537,6 +264,7 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/bcash/package.json" />
       <path value="$PROJECT_DIR$/bcoin/package.json" />
       <path value="$PROJECT_DIR$/docs/package.json" />
       <path value="$PROJECT_DIR$/ivy-bitcoin/package.json" />
@@ -555,7 +283,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -566,36 +293,13 @@
             <path>
               <item name="ivy-bitcoin" type="b2602c69:ProjectViewProjectNode" />
               <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="bcoin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ivy-bitcoin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ivy-bitcoin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ivy-bitcoin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="bcrypto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ivy-bitcoin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="ivy-bitcoin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ivy-playground" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -607,8 +311,9 @@
     <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/ivy-playground/node_modules/tslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/ivy-playground/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/ivy-bitcoin/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -647,7 +352,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86387000" />
+    <option name="totallyTimeSpent" value="88141000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -675,7 +380,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5409638" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.53975904" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -689,34 +394,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/lib/instantiate.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/components/clauseselect.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/node_modules/reselect/lib/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/components/lockedValue.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivy-playground/src/contracts/types.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -728,10 +405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="1011" column="28" selection-start-line="1011" selection-start-column="28" selection-end-line="1011" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#102#127#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,9 +412,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -756,9 +426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -766,10 +433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
-          <folding>
-            <element signature="e#20#45#0" expanded="true" />
-            <element signature="e#269#319#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,9 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="96" column="34" lean-forward="true" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
-          <folding>
-            <element signature="e#78#164#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,9 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="317" column="41" lean-forward="true" selection-start-line="317" selection-start-column="41" selection-end-line="317" selection-end-column="41" />
-          <folding>
-            <element signature="e#78#117#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -811,27 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="395">
           <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-          <folding>
-            <element signature="e#20#76#0" expanded="true" />
-            <element signature="e#527#550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="98" column="30" lean-forward="true" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!block;n#Output#0" />
-            <element signature="n#!!block;n#TransactionJSON#0" />
-            <element signature="n#!!block;n#Transaction#0" />
-            <element signature="e#1295#1412#0" />
-            <element signature="e#1491#1532#0" />
-            <element signature="n#!!block;n#symbolToOpcode#0" />
-            <element signature="e#3096#3184#0" />
-            <element signature="e#3885#4297#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,9 +482,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -856,19 +489,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9">
           <caret line="235" column="5" lean-forward="true" selection-start-line="235" selection-start-column="5" selection-end-line="235" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/instantiate.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/instantiate.ts" />
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/node_modules/bcoin/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="997">
@@ -880,19 +504,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="435" column="25" lean-forward="true" selection-start-line="435" selection-start-column="25" selection-end-line="435" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bcoin/lib/bcoin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-704">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-704" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/index.ts">
@@ -902,30 +519,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!block;n#Output#0" />
-            <element signature="n#!!block;n#TransactionJSON#0" />
-            <element signature="n#!!block;n#Transaction#0" />
-            <element signature="e#1295#1412#0" />
-            <element signature="e#1491#1532#0" />
-            <element signature="n#!!block;n#symbolToOpcode#0" />
-            <element signature="e#3096#3184#0" />
-            <element signature="e#3885#4297#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/node_modules/bcoin/lib/primitives/address.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="639" column="25" lean-forward="true" selection-start-line="639" selection-start-column="25" selection-end-line="639" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -957,9 +554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -967,20 +561,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="1439" column="16" selection-start-line="1439" selection-start-column="2" selection-end-line="1439" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bcoin/lib/primitives/keyring.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/lib/crypto.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1007,40 +592,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bcoin/lib/mining/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bcoin/lib/mempool/mempool.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bcoin/lib/crypto/bn.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/bcoin/lib/mempool/mempool.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/bcoin/lib/crypto/bn.js" />
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/lib/crypto.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1050,7 +611,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/spend.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-910">
+        <state relative-caret-position="252">
           <caret line="14" column="32" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="32" />
         </state>
       </provider>
@@ -1064,7 +625,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bcoin/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state relative-caret-position="468">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
@@ -1073,6 +634,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="49" column="8" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bcoin/node_modules/bcrypto/lib/bcrypto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bcoin/node_modules/bcrypto/lib/native/random.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1089,36 +664,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bcoin/node_modules/bcrypto/lib/native/random.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-623">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/crypto.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="2" />
+        <state>
+          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bcoin/node_modules/bcrypto/lib/bcrypto.js">
+    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="234">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bcoin/lib/bcoin-browser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="105" column="37" lean-forward="true" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+        <state relative-caret-position="315">
+          <caret line="112" column="40" lean-forward="true" selection-start-line="112" selection-start-column="40" selection-end-line="112" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1127,8 +690,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ivy-bitcoin/lib/instantiate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="59" column="43" lean-forward="true" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        <state relative-caret-position="286">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/src/instantiate.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!block;n#Output#0" />
+            <element signature="n#!!block;n#TransactionJSON#0" />
+            <element signature="n#!!block;n#Transaction#0" />
+            <element signature="e#1295#1412#0" />
+            <element signature="e#1491#1532#0" />
+            <element signature="n#!!block;n#symbolToOpcode#0" />
+            <element signature="e#3096#3184#0" />
+            <element signature="e#3885#4297#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bcash/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="67" column="23" lean-forward="true" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bcash/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1044">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-bitcoin/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="769">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ivy-playground/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="769">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
         </state>
       </provider>
     </entry>
