@@ -109,6 +109,7 @@ export default function reducer(
     }
     case CREATE_CONTRACT: {
       const instantiated: IvyContract = action.instantiated
+      console.log('instantiated', instantiated)
       if (instantiated.fundingTransaction === undefined) {
         throw new Error("did not expect funding transaction to be undefined")
       }

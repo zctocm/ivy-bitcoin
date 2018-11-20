@@ -74,7 +74,7 @@ export const updateCompiledTwo = (compiled) => {
 };
 export const UPDATE_CHOSEN_TEMPLATE = "contracts/UPDATE_CHOSEN_TEMPLATE";
 export const updateChosenTemplate = (tem) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
         dispatch({
             type: UPDATE_CHOSEN_TEMPLATE,
             tem

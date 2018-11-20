@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 // internal imports
 import Reset from "./reset";
-const logo = require("../../static/images/logo.png");
 const mapStateToProps = state => {
     const location = state.routing.location;
     if (!location) {
@@ -21,14 +20,9 @@ const Navbar = (props) => {
     return (React.createElement("nav", { className: "navbar navbar-inverse navbar-static-top" },
         React.createElement("div", { className: "container fixedcontainer" },
             React.createElement("div", { className: "navbar-header" },
-                React.createElement(Link, { to: "/create", className: "navbar-brand" },
-                    React.createElement("img", { src: logo }))),
+                React.createElement(Link, { to: "/create", className: "navbar-brand" })),
             React.createElement(ReactTooltip, { id: "seedButtonTooltip", place: "bottom", type: "error", effect: "solid" }),
             React.createElement("ul", { className: "nav navbar-nav navbar-right" },
-                React.createElement("li", null,
-                    React.createElement("a", { href: "https://github.com/ivy-lang/ivy-bitcoin" }, "GitHub")),
-                React.createElement("li", null,
-                    React.createElement("a", { href: "https://docs.ivy-lang.org/bitcoin/" }, "Docs")),
                 React.createElement("li", null,
                     React.createElement(Link, { to: "/create" }, "Create Contract")),
                 React.createElement("li", null,

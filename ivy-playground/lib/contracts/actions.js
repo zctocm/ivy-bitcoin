@@ -1,6 +1,6 @@
 // external imports
 import { push } from "react-router-redux";
-import { getCompiled, getInputMap, getInstantiated } from "../templates/selectors";
+import { getCompiled, getCompiled2, getInputMap, getInputMap2, getInstantiated, getInstantiated2 } from "../templates/selectors";
 // internal imports
 import { getFulfilledSpendTransaction, getResult, getSpendContract, getSpendContractId } from "./selectors";
 export const SHOW_UNLOCK_INPUT_ERRORS = "contracts/SHOW_UNLOCK_INPUT_ERRORS";
@@ -33,6 +33,30 @@ export const create = () => {
         dispatch(push("/unlock"));
     };
 };
+export const create2 = () => {
+    return (dispatch, getState) => {
+        const state = getState();
+        const inputMap = getInputMap(state);
+        const template = getCompiled(state);
+        const instantiated = getInstantiated(state);
+        const inputMap2 = getInputMap2(state);
+        const template2 = getCompiled2(state);
+        const instantiated2 = getInstantiated2(state);
+        dispatch({
+            type: CREATE_CONTRACT,
+            instantiated,
+            template,
+            inputMap
+        });
+        dispatch({
+            type: CREATE_CONTRACT,
+            instantiated: instantiated2,
+            template: template2,
+            inputMap: inputMap2
+        });
+        dispatch(push("/unlock"));
+    };
+};
 export const SPEND_CONTRACT = "contracts/SPEND_CONTRACT";
 export const spend = () => {
     return (dispatch, getState) => {
@@ -51,6 +75,7 @@ export const spend = () => {
             throw Error("spend called with invalid contract");
             // console.log(result)
         }
+        console.log('fulfill', spendTx);
         dispatch(push("/unlock"));
     };
 };

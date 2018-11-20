@@ -17,18 +17,18 @@ const mapStateToProps = state => {
         error: getError(state)
     };
 };
-const Editor = ({ source, error }) => {
+const Editor = ({ source, error, isBch }) => {
     return (React.createElement("div", null,
         React.createElement(ReactTooltip, { id: "saveButtonTooltip", place: "bottom", type: "error", effect: "solid" }),
         React.createElement("div", { className: "panel panel-default" },
             React.createElement("div", { className: "panel-heading clearfix" },
-                React.createElement("h1", { className: "panel-title pull-left" }, "Contract Template"),
+                React.createElement("h1", { className: "panel-title pull-left" }, isBch ? 'Contract Template ( Out1 )' : 'Contract Template'),
                 React.createElement("ul", { className: "panel-heading-btns pull-right" },
                     React.createElement("li", null,
                         React.createElement(LoadTemplate, null)),
                     React.createElement("li", null,
                         React.createElement(SaveTemplate, null)))),
             React.createElement(Ace, { source: source }),
-            error ? React.createElement(ErrorAlert, { errorMessage: error }) : React.createElement(Opcodes, null))));
+            error ? React.createElement(ErrorAlert, { errorMessage: error }) : React.createElement(Opcodes, { isBch: isBch }))));
 };
 export default connect(mapStateToProps)(Editor);

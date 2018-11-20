@@ -6,7 +6,7 @@ Ivy is also available as a (very unstable and early-stage) [JavaScript SDK](http
 npm install ivy-bitcoin
 ```
 
-This library allows you to write and compile contract templates, instantiate them with arguments (to create Bitcoin addresses), create dummy contracts (with fake value), and unlock them with arguments. 
+This library allows you to write and compile contract templates, instantiate them with arguments (to create Bitcoin addresses), create dummy contracts (with fake value), and unlock them with arguments.
 
 It does not support creating real transactions (on either the testnet or mainnet). Do not try to send BTC to addresses created by this library.
 

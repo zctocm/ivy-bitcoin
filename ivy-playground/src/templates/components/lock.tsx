@@ -74,7 +74,7 @@ const Lock = ({ source, contractParameters, error, bytecode, chosenTem }) => {
                           {error ? <ErrorAlert error={error} /> : <div />}
                       </div>
                   </Section>
-                  <LockButton />
+                  <LockButton isTwo = {true} />
               </div>
           )
       } else {
@@ -106,7 +106,7 @@ const Lock = ({ source, contractParameters, error, bytecode, chosenTem }) => {
   }
   return (
     <div>
-      <Editor />
+      <Editor isBch={ chosenTem === 'LockWithData' ? true : false}/>
       {instantiate}
     </div>
   )

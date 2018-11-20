@@ -7,7 +7,6 @@ import ReactTooltip from "react-tooltip"
 // internal imports
 import Reset from "./reset"
 
-const logo = require("../../static/images/logo.png")
 
 const mapStateToProps = state => {
   const location = state.routing.location
@@ -28,7 +27,6 @@ const Navbar = (props: { path: string }) => {
       <div className="container fixedcontainer">
         <div className="navbar-header">
           <Link to="/create" className="navbar-brand">
-            <img src={logo} />
           </Link>
         </div>
         <ReactTooltip
@@ -38,12 +36,6 @@ const Navbar = (props: { path: string }) => {
           effect="solid"
         />
         <ul className="nav navbar-nav navbar-right">
-          <li>
-            <a href="https://github.com/ivy-lang/ivy-bitcoin">GitHub</a>
-          </li>
-          <li>
-            <a href="https://docs.ivy-lang.org/bitcoin/">Docs</a>
-          </li>
           <li>
             <Link to="/create">Create Contract</Link>
           </li>

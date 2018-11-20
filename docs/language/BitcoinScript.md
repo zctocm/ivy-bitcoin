@@ -26,7 +26,7 @@ For more on Bitcoin transactions, you can check out Chapter 6 of Mastering Bitco
 
 Bitcoin wouldn't provide much security if anyone were able to unlock any contract. Contracts can only be unlocked under certain conditions, specified in that contract's *address*. For example, an address can specify that the contract can only be unlocked using a digital signature from the contract's owner (or more specifically, by the private key corresponding to a prespecified public key).
 
-Each Bitcoin address corresponds to a program.[^1] When you send Bitcoin to an address, you are creating a contract which locks that Bitcoin up with that address's program. The only way to spend that Bitcoin is to satisfy the program, thus unlocking the value and allowing it to be sent to a new address. 
+Each Bitcoin address corresponds to a program.[^1] When you send Bitcoin to an address, you are creating a contract which locks that Bitcoin up with that address's program. The only way to spend that Bitcoin is to satisfy the program, thus unlocking the value and allowing it to be sent to a new address.
 
 When spending a contract, the user provides some arguments to satisfy the contract's program. For example, the arguments might include one or more signatures, or the preimage of a particular hash. In Ivy, these arguments are referred to as *clause arguments*, since they are provided at the time that a particular clause of the contract is invoked.
 

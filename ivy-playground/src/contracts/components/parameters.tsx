@@ -995,7 +995,6 @@ function mapDispatchToContractInputProps(dispatch, ownProps: { id: string }) {
 function mapDispatchToContractInputProps2(dispatch, ownProps: { id: string }) {
     return {
         handleChange: e => {
-            console.log('updateInput2')
             dispatch(updateInput2(ownProps.id, e.target.value.toString()))
         }
     }
@@ -1145,7 +1144,6 @@ export function getWidget2(id: string): JSX.Element {
             mapDispatchToContractInputProps2
         )(focusWidget(getWidgetType(type, true)))
     } else {
-        // todo replace new data
         widgetTypeConnected = connect(
             mapStateToSpendInputProps,
             mapDispatchToSpendInputProps

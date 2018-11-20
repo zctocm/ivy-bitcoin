@@ -314,12 +314,17 @@ export const getFulfilledSpendTransaction = createSelector(
     ) {
       return undefined
     }
+    console.log('参数',instantiated)
+    console.log('参数',unfulfilledSpendTransaction)
+    console.log('参数',witnessArgs)
+    console.log('参数',spendClauseArgument)
     const spendTransaction = fulfill(
       instantiated,
       unfulfilledSpendTransaction,
       witnessArgs,
       spendClauseArgument
     )
+
     return spendTransaction
   }
 )

@@ -1,6 +1,7 @@
 import { push } from "react-router-redux";
 import templates from "../templates";
 import { DEMO_CONTRACTS, DEMO_ID_LIST } from "ivy-bitcoin";
+import { updateChosenTemplate, loadTemplate } from "../templates/actions";
 export const RESET = "app/RESET";
 export const reset = () => {
     return (dispatch, getState) => {
@@ -10,6 +11,7 @@ export const reset = () => {
         }
         dispatch(push("/"));
         dispatch({ type: RESET });
-        dispatch(templates.actions.loadTemplate(selected));
+        dispatch(loadTemplate(selected));
+        dispatch(updateChosenTemplate(selected));
     };
 };

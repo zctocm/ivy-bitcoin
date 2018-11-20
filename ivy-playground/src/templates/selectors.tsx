@@ -25,6 +25,7 @@ export const getSourceMap = createSelector(
 )
 
 export const getSource = createSelector(getTemplateState, state => state.source)
+export const getSource2 = createSelector(getTemplateState, state => state.source2)
 
 export const getTemplateIds = createSelector(
   getTemplateState,
@@ -40,6 +41,10 @@ export const getInputMap = createSelector(
   templateState => templateState.inputMap
 )
 
+export const getInputMap2 = createSelector(
+    getTemplateState,
+    templateState => templateState.inputMap2
+)
 export const getInputList = createSelector(getInputMap, inputMap => {
   if (inputMap === undefined) {
     return undefined
@@ -110,7 +115,24 @@ export const areInputsValid = createSelector(
     }
   }
 )
-
+export const areInputsValid2 = createSelector(
+    getInputMap2,
+    getParameterIds2,
+    (inputMap, parameterIds) => {
+        if (parameterIds === undefined || inputMap === undefined) {
+            return false
+        }
+        try {
+            parameterIds.filter(id => {
+                getData(id, inputMap)
+            })
+            return true
+        } catch (e) {
+            // console.log(e)
+            return false
+        }
+    }
+)
 export const getShowLockInputErrors = createSelector(
   getTemplateState,
   (state: TemplateState): boolean => state.showLockInputErrors
@@ -119,6 +141,7 @@ export const getShowLockInputErrors = createSelector(
 export const getContractArgs = createSelector(
   getParameterIds,
   getInputMap,
+
   (parameterIds, inputMap) => {
     if (parameterIds === undefined || inputMap === undefined) {
       return undefined
@@ -143,7 +166,33 @@ export const getContractArgs = createSelector(
     }
   }
 )
-
+export const getContractArgs2 = createSelector(
+    getParameterIds2,
+    getInputMap2,
+    (parameterIds, inputMap) => {
+        if (parameterIds === undefined || inputMap === undefined) {
+            return undefined
+        }
+        try {
+            const contractArgs: Array<number | Buffer> = []
+            for (const id of parameterIds) {
+                if (
+                    inputMap[id].value === "valueInput" &&
+                    !isValidInput(id + ".valueInput", inputMap)
+                ) {
+                    // don't let invalid Values prevent compilation
+                    contractArgs.push(NaN)
+                } else {
+                    contractArgs.push(getData(id, inputMap))
+                }
+            }
+            return contractArgs
+        } catch (e) {
+            // console.log(e)
+            return undefined
+        }
+    }
+)
 export const getInstantiated = createSelector(
   getCompiled,
   getContractArgs,
@@ -154,7 +203,16 @@ export const getInstantiated = createSelector(
     return instantiate(template, contractArgs)
   }
 )
-
+export const getInstantiated2 = createSelector(
+    getCompiled2,
+    getContractArgs2,
+    (template, contractArgs) => {
+        if (template === undefined || contractArgs === undefined) {
+            return undefined
+        }
+        return instantiate(template, contractArgs)
+    }
+)
 export const getSelectedTemplate = createSelector(
   getCompiled,
   getSourceMap,
@@ -243,4 +301,50 @@ export const getCreateability = createSelector(
       error: ""
     }
   }
+)
+export const getCreateability2 = createSelector(
+    getSource2,
+    getSourceMap,
+    getCompiled2,
+    areInputsValid2,
+    getError,
+    (source, sourceMap, compiled, inputsAreValid, error) => {
+        if (compiled === undefined) {
+            return {
+                createable: false,
+                error: "Contract template has not been compiled."
+            }
+        }
+        if (error !== undefined) {
+            return {
+                createable: false,
+                error: "Contract template is not valid Ivy."
+            }
+        }
+        if (!inputsAreValid) {
+            return {
+                createable: false,
+                error: "One or more arguments to the contract are invalid."
+            }
+        }
+        const name = compiled.name
+        const savedSource = sourceMap[name]
+        if (savedSource === undefined) {
+            return {
+                createable: false,
+                error: "Contract template must be saved before it can be instantiated."
+            }
+        }
+        if (savedSource !== source) {
+            return {
+                createable: false,
+                error:
+                    "Contract template must be saved (under an unused name) before it can be instantiated."
+            }
+        }
+        return {
+            createable: true,
+            error: ""
+        }
+    }
 )

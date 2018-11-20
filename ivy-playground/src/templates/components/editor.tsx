@@ -21,7 +21,7 @@ const mapStateToProps = state => {
   }
 }
 
-const Editor = ({ source, error }) => {
+const Editor = ({ source, error, isBch }) => {
   return (
     <div>
       <ReactTooltip
@@ -32,7 +32,9 @@ const Editor = ({ source, error }) => {
       />
       <div className="panel panel-default">
         <div className="panel-heading clearfix">
-          <h1 className="panel-title pull-left">Contract Template</h1>
+          <h1 className="panel-title pull-left">
+              {isBch ?  'Contract Template ( Out1 )' :  'Contract Template'}
+          </h1>
           <ul className="panel-heading-btns pull-right">
             <li>
               <LoadTemplate />
@@ -43,7 +45,7 @@ const Editor = ({ source, error }) => {
           </ul>
         </div>
         <Ace source={source} />
-        {error ? <ErrorAlert errorMessage={error} /> : <Opcodes />}
+        {error ? <ErrorAlert errorMessage={error} /> : <Opcodes  isBch={isBch}/>}
       </div>
     </div>
   )

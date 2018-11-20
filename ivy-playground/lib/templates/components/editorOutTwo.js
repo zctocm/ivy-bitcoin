@@ -15,7 +15,7 @@ const Editor = ({ source }) => {
     return (React.createElement("div", null,
         React.createElement("div", { className: "panel panel-default" },
             React.createElement("div", { className: "panel-heading clearfix" },
-                React.createElement("h1", { className: "panel-title pull-left" }, "Contract Template"),
+                React.createElement("h1", { className: "panel-title pull-left" }, "Contract Template ( Out2 )"),
                 React.createElement("ul", { className: "panel-heading-btns pull-right" })),
             React.createElement(Ace, { source: source }),
             React.createElement("div", { className: "panel-body inner" },

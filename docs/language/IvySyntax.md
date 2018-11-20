@@ -18,7 +18,7 @@ contract LockWithPublicKey(publicKey: PublicKey, val: Value) {
 }
 ```
 
-Each contract template needs to be passed some *contract arguments* to turn it into a contract. Each argument has a [type](/language/Types.html), such as PublicKey, Value, or Signature. 
+Each contract template needs to be passed some *contract arguments* to turn it into a contract. Each argument has a [type](/language/Types.html), such as PublicKey, Value, or Signature.
 
 This contract can be parameterized with a cryptographic public key, **publicKey**, to create an address.
 
