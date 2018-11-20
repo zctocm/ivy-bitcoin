@@ -15,15 +15,25 @@ const parser = require("../lib/parser")
 
 export function compile(source: string): Template | CompilerError {
   try {
+    console.warn('source:'+source)
     const rawAst = parser.parse(source) as RawContract
+    console.warn('rawAst:'+JSON.stringify(rawAst))
     const referenceChecked = referenceCheck(rawAst)
+    console.warn('referenceChecked:'+JSON.stringify(referenceChecked))
     const ast = typeCheckContract(referenceChecked)
+    console.warn('ast:'+JSON.stringify(ast))
     const templateClauses = ast.clauses.map(toTemplateClause)
-    const operations = compileStackOps(
-      compileContractToIntermediate(desugarContract(ast))
-    )
+    console.warn('templateClauses:'+JSON.stringify(templateClauses))
+    const desugarContent=desugarContract(ast)
+    console.warn('desugar: '+JSON.stringify(desugarContent))
+    const contractData=compileContractToIntermediate(desugarContent)
+    console.warn('contractToIntermediate: '+JSON.stringify(contractData))
+    const operations = compileStackOps(contractData)
+    console.warn('operations:'+JSON.stringify(operations))
     const instructions = optimize(toOpcodes(operations))
+    console.warn('instructions:'+JSON.stringify(instructions))
     const params = ast.parameters.map(toContractParameter)
+    console.warn('params:'+JSON.stringify(params))
     return {
       type: "template",
       name: ast.name,

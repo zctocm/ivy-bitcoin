@@ -216,6 +216,9 @@ export function typeCheckExpression(expression: Expression): Type {
           return "Bytes"
         case "==":
         case "!=":
+        case ">":
+        case "<": 
+          // todo: check the inputType when '>' 
           if (inputTypes[0] === "Boolean" || inputTypes[1] === "Boolean") {
             throw new IvyTypeError(
               "cannot pass value of type Boolean to " + expression.instruction
