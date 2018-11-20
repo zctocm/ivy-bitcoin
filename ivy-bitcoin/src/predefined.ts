@@ -169,6 +169,15 @@ LockWithData: `contract LockWithData(
     verify after(recoveryTime)
     unlock val
   }
+}`,
+
+RevealNumber: `contract RevealNumber(num: Integer, val: Value,str2:Bytes) {
+  clause reveal(num2: Integer,str1 :Bytes) {
+    verify num > num2
+    verify cat(str1,str2)
+    verify num2 < 5
+    unlock val
+  }
 }`
 }
 
@@ -186,6 +195,7 @@ const Ripemd160Bytes = Buffer.from(
   "cbf33f6b1a8ddd0ba7960f639d703653d111b366",
   "hex"
 )
+
 
 const PublicKeyHash = Buffer.from(
   "67e403c30d6a2f5240bdd47b4d977c2c006f9639e80ccaf24547569f03729f60",
@@ -229,6 +239,7 @@ export const TEST_CONTRACT_ARGS = {
   HashOperations: [Sha256Bytes, Sha1Bytes, Ripemd160Bytes, 0],
   RevealNumber: [5, 0],
   CheckSize: [0],
+  LockWithData:[PublicKeyHash,PublicKeyHash,20,0],
 }
 
 export const TEST_CONTRACT_CLAUSE_NAMES = {
@@ -247,6 +258,7 @@ export const TEST_CONTRACT_CLAUSE_NAMES = {
   HashOperations: "reveal",
   RevealNumber: "reveal",
   CheckSize: "reveal",
+  // LockWithDataSecond:'spend'
 }
 
 export const TEST_CONTRACT_TIMES = {

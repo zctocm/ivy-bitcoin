@@ -23,7 +23,6 @@ export type FunctionName =
   | "checkMultiSig"
   | "bytes"
   | "size"
-  | "cat"
 
 
 export type Opcode = string // for now
@@ -71,8 +70,7 @@ export function getOpcodes(instruction: Instruction): Opcode[] {
       return ["GREATERTHAN", "DROP", "1"]  
     case "<":
       return ["LESSTHAN", "DROP", "1"]  
-    case "cat":
-      return ["CAT"]  
+
   }
 }
 
@@ -107,7 +105,5 @@ export function getTypeSignature(instruction: Instruction): TypeSignature {
       throw new Error("should not call getTypeSignature on hash function")
     case "bytes":
       throw new Error("should not call getTypeSignature on bytes function")
-    case "cat":
-      return createTypeSignature(["Bytes","Bytes"], "Boolean")
   }
 }
