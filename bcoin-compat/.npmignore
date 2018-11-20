@@ -1,9 +1,0 @@
-.git*
-bench/
-docs/
-docker_data/
-test/
-node_modules/
-browser/bcoin*
-package-lock.json
-npm-debug.log
