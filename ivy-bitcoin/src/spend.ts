@@ -4,17 +4,18 @@ import { Contract, Transaction } from "./instantiate"
 
 import {
   address as Address,
-  mtx as Mtx,
+  keyring as KeyRing,
   opcode as Opcode,
-  outpoint as Outpoint,
+  primitives,
   script as Script,
-  tx as Tx,
-  witness as Witness
 } from "bcoin"
+
+const MTX = primitives.MTX
+const TX = primitives.TX
 
 import * as crypto from "bcrypto"
 
-import { KeyRing, secp256k1 } from "./crypto"
+import { secp256k1 } from "./crypto"
 
 export const toSighash = (
   instantiated: Contract,
@@ -28,7 +29,7 @@ export const toSighash = (
       ? Script.fromPubkeyhash(
           crypto.hash160(Buffer.from(instantiated.publicKey, "hex"))
         )
-      : Script.fromRaw(Buffer.from(instantiated.witnessScript, "hex"))
+      : Script.fromRaw(Buffer.from(instantiated.script, "hex"))
     return spendTransaction.signatureHash(0, script, instantiated.amount, 1, 1)
   } catch (e) {
     return undefined
@@ -42,8 +43,8 @@ export const spend = (
   locktime: number,
   sequenceNumber: { sequence: number; seconds: boolean }
 ) => {
-  const sourceTransaction = Tx.fromJSON(spendSourceTransaction)
-  const m = new Mtx()
+  const sourceTransaction = TX.fromJSON(spendSourceTransaction)
+  const m = new MTX()
   m.addTX(sourceTransaction, 0)
   m.addOutput({
     address: spendDestinationAddress,
@@ -69,16 +70,15 @@ export function toBuf(arg: Buffer | number | string) {
 export const fulfill = (
   instantiated: Contract,
   spendTx: any,
-  witnessArgs: any[],
+  clauseArgs: any[],
   spendClauseName: string
 ) => {
   const spendTransaction = spendTx.clone()
   // deal with a weird bug in the cloning
   spendTransaction.view = spendTx.view
-  const scriptSig = instantiated.scriptSig
-  const witnessScript = instantiated.publicKey
+  const script = instantiated.publicKey
     ? Buffer.from(instantiated.publicKey, "hex")
-    : Buffer.from(instantiated.witnessScript, "hex")
+    : Buffer.from(instantiated.script, "hex")
   const realClauses = instantiated.template.clauses
   const spendClauseIndex = realClauses
     .map(clause => clause.name)
@@ -87,14 +87,15 @@ export const fulfill = (
     throw new Error("could not find clause: " + spendClauseName)
   }
   const numClauses = instantiated.template.clauses.length
-  const generatedArgs = witnessArgs.reverse().map(toBuf)
+  console.log('clauseArgs: '+JSON.stringify(clauseArgs))
+  const generatedArgs = clauseArgs.reverse().map(toBuf)
+  console.log('generatedArgs: '+JSON.stringify(generatedArgs))
   const maybeClauseArg = numClauses > 1 ? [toBuf(spendClauseIndex)] : []
-  const allWitnessArgs = [...generatedArgs, ...maybeClauseArg, witnessScript]
-  const witness = Witness.fromArray(allWitnessArgs)
-  spendTransaction.inputs[0].script = Script.fromRaw(
-    Buffer.from(scriptSig, "hex")
-  )
-  spendTransaction.inputs[0].witness = witness
+  const args = [...generatedArgs, ...maybeClauseArg, script]
+  console.log('args: '+JSON.stringify(args))
+  const scriptSig = Script.fromArray(args)
+  console.log('scriptSig: '+JSON.stringify(scriptSig))
+  spendTransaction.inputs[0].script = scriptSig
   return spendTransaction
 }
 
@@ -105,6 +106,7 @@ export const createSignature = (sigHash: Buffer, secret: string) => {
   try {
     privKey = KeyRing.fromSecret(secret).getPrivateKey()
   } catch (e) {
+    console.log(e)
     return undefined
   }
   const sig = secp256k1.signDER(sigHash, privKey) as Buffer

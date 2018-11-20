@@ -2,26 +2,26 @@ import { Template } from "./template"
 
 import {
   address as Address,
-  crypto,
-  mtx as Mtx,
   opcode as Opcode,
   outpoint as Outpoint,
+  primitives,
   script as Script
 } from "bcoin"
 import { BugError } from "./errors"
 
+import * as crypto from "bcrypto"
+
+const MTX = primitives.MTX
+
 interface ScriptObject {
   toJSON: () => string // encodes as hex string
-  forWitness: () => ScriptObject
   hash160: () => Buffer
   isPubkey: () => boolean
   toRaw: () => Buffer
 }
 
 export interface Contract {
-  witnessScript: string
-  redeemScript: string
-  scriptSig: string
+  script: string
   testnetAddress: string
   publicKey?: string
   fundingTransaction?: TransactionJSON
@@ -65,8 +65,8 @@ function createFundingTransaction(
     return undefined
   }
 
-  const mtx = new Mtx()
-
+  const mtx = new MTX()
+  console.log('valuesArgs: '+ JSON.stringify(valueArgs))
   valueArgs.forEach(amount => {
     mtx.addInput({
       prevout: new Outpoint(),
@@ -90,7 +90,7 @@ function createFundingTransaction(
   })
 
   const tx: Transaction = mtx.toTX()
-
+  console.log('tx json: '+JSON.stringify(tx.toJSON()))
   return tx.toJSON()
 }
 
@@ -105,6 +105,7 @@ export function argToPushData(arg: Buffer | number | string) {
 }
 
 export function symbolToOpcode(sym: string, argMap: Map<string, any>) {
+  console.log('sym: '+sym)
   if (sym[sym.length - 1] === ")") {
     // it's a contract argument
     const name = sym.slice(5, sym.length - 1)
@@ -122,7 +123,7 @@ export function symbolToOpcode(sym: string, argMap: Map<string, any>) {
 export function instantiate(
   template: Template,
   args: Array<Buffer | number>,
-  seed = crypto.random.randomBytes(32)
+  seed = crypto.randomBytes(32)
 ): Contract {
   const numArgs = template.params.length
   if (numArgs !== args.length) {
@@ -141,17 +142,15 @@ export function instantiate(
       argMap.set(param.name, args[i])
     }
   })
+  console.log('argMap: '+JSON.stringify(argMap))
   const opcodes = instructions.map(inst => symbolToOpcode(inst, argMap))
-  const witnessScript: ScriptObject = Script.fromArray(opcodes)
-  const redeemScript: ScriptObject = witnessScript.forWitness()
-  const scriptSig: ScriptObject = Script.fromArray([
-    argToPushData(redeemScript.toRaw())
-  ])
+  const script: ScriptObject = Script.fromArray(opcodes)
+  console.log('script: '+JSON.stringify(script))
   const testnetAddress = Address.fromScripthash(
-    redeemScript.hash160(),
+    script.hash160(),
     "testnet"
   )
-  const mainnetAddress = Address.fromScripthash(redeemScript.hash160())
+  const mainnetAddress = Address.fromScripthash(script.hash160())
   const tx = createFundingTransaction(testnetAddress, valueArgs, seed)
   // if (tx === undefined) {
   //   throw new Error(
@@ -159,12 +158,10 @@ export function instantiate(
   //   )
   // }
   const instantiated = {
-    witnessScript: witnessScript.toJSON(),
-    redeemScript: redeemScript.toJSON(),
-    scriptSig: scriptSig.toJSON(),
+    script: script.toJSON(),
     testnetAddress: testnetAddress.toBase58(),
     mainnetAddress: mainnetAddress.toBase58(),
-    publicKey: witnessScript.isPubkey()
+    publicKey: script.isPubkey()
       ? (args[0] as Buffer).toString("hex")
       : undefined,
     fundingTransaction: tx,
