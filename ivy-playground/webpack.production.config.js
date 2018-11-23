@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "bitcoin-playground.bundle.js",
-    publicPath: "/static/"
+    publicPath: "/"
   },
   resolve: {
     modules: ["node_modules"],

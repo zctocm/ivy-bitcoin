@@ -1,8 +1,8 @@
 {
-  "name": "ivy-bitcoin",
-  "description": "Compiler for Ivy, Chain's smart contract language.",
+  "name": "ivy-bch",
+  "description": "Compiler for Ivy, Smart contract language.",
   "version": "0.0.31",
-  "homepage": "https://www.github.com/ivy-lang/ivy-bitcoin",
+  "homepage": "https://github.com/copernet/ivybch",
   "license": "MIT",
   "main": "lib/index.js",
   "dependencies": {

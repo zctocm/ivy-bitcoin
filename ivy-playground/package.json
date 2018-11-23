@@ -3,8 +3,7 @@
   "description": "Sandbox for testing Ivy for Bitcoin.",
   "version": "0.0.1",
   "bugs": {
-    "url": "https://github.com/ivy-lang/ivy-bitcoin/issues",
-    "email": "ivy@chain.com"
+    "url": "https://github.com/copernet/ivybch/issues",
   },
   "dependencies": {
     "@types/node": "^7.0.46",
@@ -17,7 +16,7 @@
     "brace": "^0.10.0",
     "css-loader": "^0.28.1",
     "file-loader": "~0.9.0",
-    "ivy-bitcoin": "../ivy-bitcoin",
+    "ivy-bitcoin": "../ivy-bch",
     "json-loader": "^0.5.4",
     "moment": "^2.19.1",
     "pegjs": "^0.10.0",
@@ -51,10 +50,9 @@
   },
   "license": "MIT",
   "main": "src/entry.js",
-  "repository": "ivy-lang/ivy-bitcoin",
+  "repository": "copernet/ivybch",
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
-    "deploy": "npm run build && aws s3 cp public s3://ivy-lang.org/static --recursive",
     "start": "webpack-dev-server --content-base public --inline --hot",
     "test": ""
   }
