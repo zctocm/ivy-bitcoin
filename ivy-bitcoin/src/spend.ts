@@ -30,7 +30,8 @@ export const toSighash = (
           crypto.hash160(Buffer.from(instantiated.publicKey, "hex"))
         )
       : Script.fromRaw(Buffer.from(instantiated.script, "hex"))
-    return spendTransaction.signatureHash(0, script, instantiated.amount, 1, 1)
+    console.log('===test_script: '+JSON.stringify(Script))  
+    return spendTransaction.signatureHash(0, script, instantiated.amount, 0x41, 1 << 16)
   } catch (e) {
     return undefined
   }
@@ -52,18 +53,25 @@ export const spend = (
   })
   m.setLocktime(locktime)
   m.setSequence(0, sequenceNumber.sequence, sequenceNumber.seconds)
+  // console.warn('tx json spend: '+JSON.stringify(m.toJSON()))
   return m
 }
 
 export function toBuf(arg: Buffer | number | string) {
+  // console.log('toBuf_arg: '+JSON.stringify(arg))
   if (typeof arg === "number") {
+    // console.log('toBuf_humber: '+Opcode.fromInt(arg))
     return Opcode.fromInt(arg)
-      .toNum()
-      .toRaw() // roundabout, but seems to be the only exposed way
+   // roundabout, but seems to be the only exposed way
   } else if (typeof arg === "string") {
-    return Buffer.from(arg, "hex")
+    // console.log('toBuf_string: '+JSON.stringify(Opcode.fromString(arg)))
+    // return Buffer.from(arg, "hex")
+    return Opcode.fromString(arg)
   } else {
-    return arg
+    // console.log('toBuf_default_original: '+arg)
+    // console.log('toBuf_default_json: '+JSON.stringify(arg))
+    // console.log('toBuf_default_data: '+Opcode.fromData(arg))
+    return Opcode.fromData(arg)
   }
 }
 
@@ -79,6 +87,7 @@ export const fulfill = (
   const script = instantiated.publicKey
     ? Buffer.from(instantiated.publicKey, "hex")
     : Buffer.from(instantiated.script, "hex")
+  console.log('fulfill_script: '+JSON.stringify(script))  
   const realClauses = instantiated.template.clauses
   const spendClauseIndex = realClauses
     .map(clause => clause.name)
@@ -91,24 +100,27 @@ export const fulfill = (
   const generatedArgs = clauseArgs.reverse().map(toBuf)
   console.log('generatedArgs: '+JSON.stringify(generatedArgs))
   const maybeClauseArg = numClauses > 1 ? [toBuf(spendClauseIndex)] : []
-  const args = [...generatedArgs, ...maybeClauseArg, script]
-  console.log('args: '+JSON.stringify(args))
+  console.log('maybeClauseArg: '+JSON.stringify(maybeClauseArg))
+  const args = [...generatedArgs, ...maybeClauseArg, toBuf(script)]
+  console.log('fulfill_args: '+JSON.stringify(args))
   const scriptSig = Script.fromArray(args)
   console.log('scriptSig: '+JSON.stringify(scriptSig))
   spendTransaction.inputs[0].script = scriptSig
+  console.log('tx_json_fullfill: '+JSON.stringify(spendTransaction.toJSON()))
   return spendTransaction
 }
 
-const sigHashType = Buffer.from([1])
+const sigHashType = Buffer.from([0x41])
 
 export const createSignature = (sigHash: Buffer, secret: string) => {
   let privKey
   try {
     privKey = KeyRing.fromSecret(secret).getPrivateKey()
   } catch (e) {
-    console.log(e)
+    console.warn('spend进这里了'+JSON.stringify(e))
     return undefined
   }
+  console.warn('走这里了么')
   const sig = secp256k1.signDER(sigHash, privKey) as Buffer
   const fullSig = Buffer.concat([sig, sigHashType])
   return fullSig

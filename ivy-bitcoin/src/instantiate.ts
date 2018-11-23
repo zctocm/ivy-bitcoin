@@ -52,7 +52,7 @@ export interface Transaction {
     script: any,
     amount: number,
     type: number,
-    version: number
+    flags: number
   ) => Buffer
 }
 
@@ -90,7 +90,7 @@ function createFundingTransaction(
   })
 
   const tx: Transaction = mtx.toTX()
-  console.log('tx json: '+JSON.stringify(tx.toJSON()))
+  console.warn('tx json createFundingTransaction: '+JSON.stringify(tx.toJSON()))
   return tx.toJSON()
 }
 
@@ -105,7 +105,6 @@ export function argToPushData(arg: Buffer | number | string) {
 }
 
 export function symbolToOpcode(sym: string, argMap: Map<string, any>) {
-  console.log('sym: '+sym)
   if (sym[sym.length - 1] === ")") {
     // it's a contract argument
     const name = sym.slice(5, sym.length - 1)
@@ -142,10 +141,11 @@ export function instantiate(
       argMap.set(param.name, args[i])
     }
   })
-  console.log('argMap: '+JSON.stringify(argMap))
+  // console.log('argMap: '+JSON.stringify(argMap))
   const opcodes = instructions.map(inst => symbolToOpcode(inst, argMap))
+  // console.log('opcodes: '+JSON.stringify(opcodes))
   const script: ScriptObject = Script.fromArray(opcodes)
-  console.log('script: '+JSON.stringify(script))
+  // console.log('script: '+JSON.stringify(script))
   const testnetAddress = Address.fromScripthash(
     script.hash160(),
     "testnet"

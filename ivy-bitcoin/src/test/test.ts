@@ -85,7 +85,7 @@ describe("fulfill", () => {
         TEST_SPEND_ARGUMENTS[id],
         TEST_CONTRACT_CLAUSE_NAMES[id]
       )
-      fulfilled.check()
+      fulfilled.check(1 << 16)
     })
   })
 })

@@ -15,25 +15,25 @@ const parser = require("../lib/parser")
 
 export function compile(source: string): Template | CompilerError {
   try {
-    console.warn('source:'+source)
+    // console.warn('source:'+source)
     const rawAst = parser.parse(source) as RawContract
-    console.warn('rawAst:'+JSON.stringify(rawAst))
+    // console.warn('rawAst:'+JSON.stringify(rawAst))
     const referenceChecked = referenceCheck(rawAst)
-    console.warn('referenceChecked:'+JSON.stringify(referenceChecked))
+    // console.warn('referenceChecked:'+JSON.stringify(referenceChecked))
     const ast = typeCheckContract(referenceChecked)
-    console.warn('ast:'+JSON.stringify(ast))
+    // console.warn('ast:'+JSON.stringify(ast))
     const templateClauses = ast.clauses.map(toTemplateClause)
-    console.warn('templateClauses:'+JSON.stringify(templateClauses))
+    // console.warn('templateClauses:'+JSON.stringify(templateClauses))
     const desugarContent=desugarContract(ast)
-    console.warn('desugar: '+JSON.stringify(desugarContent))
+    // console.warn('desugar: '+JSON.stringify(desugarContent))
     const contractData=compileContractToIntermediate(desugarContent)
-    console.warn('contractToIntermediate: '+JSON.stringify(contractData))
+    // console.warn('contractToIntermediate: '+JSON.stringify(contractData))
     const operations = compileStackOps(contractData)
-    console.warn('operations:'+JSON.stringify(operations))
+    // console.warn('operations:'+JSON.stringify(operations))
     const instructions = optimize(toOpcodes(operations))
-    console.warn('instructions:'+JSON.stringify(instructions))
+    // console.warn('instructions:'+JSON.stringify(instructions))
     const params = ast.parameters.map(toContractParameter)
-    console.warn('params:'+JSON.stringify(params))
+    // console.warn('params:'+JSON.stringify(params))
     return {
       type: "template",
       name: ast.name,
