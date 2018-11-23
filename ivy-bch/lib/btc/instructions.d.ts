@@ -1,0 +1,10 @@
+import { TypeSignature } from "./types";
+export declare type ComparisonOperator = "==" | "!=" | ">" | "<";
+export declare function isComparisonOperator(str: string): str is ComparisonOperator;
+export declare type FunctionName = "checkSig" | "checkDataSig" | "ripemd160" | "sha1" | "sha256" | "older" | "after" | "checkMultiSig" | "bytes" | "size";
+export declare type Opcode = string;
+export declare type BinaryOperator = ComparisonOperator;
+export declare type Instruction = BinaryOperator | FunctionName;
+export declare function isInstruction(instructionName: Instruction | string): instructionName is Instruction;
+export declare function getOpcodes(instruction: Instruction): Opcode[];
+export declare function getTypeSignature(instruction: Instruction): TypeSignature;
